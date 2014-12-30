@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0510"
+   LastUpgradeVersion = "0610"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -17,7 +17,21 @@
                BlueprintIdentifier = "AAC854E818F51B9600CD4709"
                BuildableName = "Classy.app"
                BlueprintName = "Classy"
-               ReferencedContainer = "container:Classy.xcodeproj">
+               ReferencedContainer = "container:classy.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "AAC8550918F51B9600CD4709"
+               BuildableName = "ClassyTests.xctest"
+               BlueprintName = "ClassyTests"
+               ReferencedContainer = "container:classy.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +49,7 @@
                BlueprintIdentifier = "AAC8550918F51B9600CD4709"
                BuildableName = "ClassyTests.xctest"
                BlueprintName = "ClassyTests"
-               ReferencedContainer = "container:Classy.xcodeproj">
+               ReferencedContainer = "container:classy.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -45,7 +59,7 @@
             BlueprintIdentifier = "AAC854E818F51B9600CD4709"
             BuildableName = "Classy.app"
             BlueprintName = "Classy"
-            ReferencedContainer = "container:Classy.xcodeproj">
+            ReferencedContainer = "container:classy.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -64,7 +78,7 @@
             BlueprintIdentifier = "AAC854E818F51B9600CD4709"
             BuildableName = "Classy.app"
             BlueprintName = "Classy"
-            ReferencedContainer = "container:Classy.xcodeproj">
+            ReferencedContainer = "container:classy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -82,7 +96,7 @@
             BlueprintIdentifier = "AAC854E818F51B9600CD4709"
             BuildableName = "Classy.app"
             BlueprintName = "Classy"
-            ReferencedContainer = "container:Classy.xcodeproj">
+            ReferencedContainer = "container:classy.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

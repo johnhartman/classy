@@ -17,4 +17,5 @@
 - (id) initWithName:(NSString*)name
           withColor:(NSString*)color
       withTimeSlots:(NSMutableSet*)timeSlots;
+
 @end

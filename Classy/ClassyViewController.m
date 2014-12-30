@@ -9,8 +9,13 @@
 #import "ClassyViewController.h"
 #import "TimeSlot.h"
 #import "Activity.h"
+#import "WeeklySchedule.h"
 
 @interface ClassyViewController ()
+
+@property (nonatomic, strong) UIProgressView *progressView;
+
+- (void)toggleNextActivityLabelVisible:(BOOL)visible;
 
 @end
 
@@ -19,177 +24,177 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    [self setTimer];
     
-    // A BLOCK TIMESLOTS -----------------------------
+    self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     
-    TimeSlot* ABlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:8*60+25] withDuration:[NSNumber numberWithInt:45]];
+    self.progressView.center = self.view.center;
+    [self.view addSubview:self.progressView];
+}
+
+// COUNTDOWN CODE
+
+- (void) timerRun {
+    // get the weekday schedule (copy/move from viewDidLoad above)
     
-    TimeSlot* ABlockTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:14*60+35] withDuration:[NSNumber numberWithInt:45]];
+    // ESTABLISHING CURRENT DATE AND TIME
     
-    TimeSlot* ABlockWednesday = [[TimeSlot alloc] initWithWeekday:@"Wednesday" withStartMinute:[NSNumber numberWithInt:8*60+25] withDuration:[NSNumber numberWithInt:90]];
+    NSDate *currentTime = [NSDate date];
     
-    TimeSlot* ABlockFriday = [[TimeSlot alloc] initWithWeekday:@"Friday" withStartMinute:[NSNumber numberWithInt:13*60+10] withDuration:[NSNumber numberWithInt:40]];
+    NSDateFormatter* theDateFormatter = [[NSDateFormatter alloc] init];
+    [theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
+    [theDateFormatter setDateFormat:@"EEEE"];
+    NSString *currentWeekday =  [theDateFormatter stringFromDate:currentTime];
     
-    // B BLOCK TIMESLOTS -----------------------------
     
-    TimeSlot* BBlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:9*60+15] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* BBlockTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:8*60+25] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* BBlockWednesday = [[TimeSlot alloc] initWithWeekday:@"Wednesday" withStartMinute:[NSNumber numberWithInt:10*60+40] withDuration:[NSNumber numberWithInt:90]];
-    
-    TimeSlot* BBlockFriday = [[TimeSlot alloc] initWithWeekday:@"Friday" withStartMinute:[NSNumber numberWithInt:13*60+55] withDuration:[NSNumber numberWithInt:40]];
-    
-    // C BLOCK TIMESLOTS -----------------------------
-    
-    TimeSlot* CBlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:10*60+20] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* CBlockTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:9*60+15] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* CBlockWednesday = [[TimeSlot alloc] initWithWeekday:@"Wednesday" withStartMinute:[NSNumber numberWithInt:12*60+15] withDuration:[NSNumber numberWithInt:90]];
-    
-    TimeSlot* CBlockFriday = [[TimeSlot alloc] initWithWeekday:@"Friday" withStartMinute:[NSNumber numberWithInt:14*60+40] withDuration:[NSNumber numberWithInt:40]];
-    
-    // D BLOCK TIMESLOTS -----------------------------
-    
-    TimeSlot* DBlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:11*60+10] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* DBlockTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:10*60+20] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* DBlockWednesday = [[TimeSlot alloc] initWithWeekday:@"Wednesday" withStartMinute:[NSNumber numberWithInt:13*60+50] withDuration:[NSNumber numberWithInt:90]];
-    
-    TimeSlot* DBlockFriday = [[TimeSlot alloc] initWithWeekday:@"Friday" withStartMinute:[NSNumber numberWithInt:8*60+25] withDuration:[NSNumber numberWithInt:40]];
-    
-    // E BLOCK TIMESLOTS -----------------------------
-    
-    TimeSlot* EBlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:12*60+55] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* EBlockTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:11*60+10] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* EBlockThursday = [[TimeSlot alloc] initWithWeekday:@"Thursday" withStartMinute:[NSNumber numberWithInt:12*60+45] withDuration:[NSNumber numberWithInt:90]];
-    
-    TimeSlot* EBlockFriday = [[TimeSlot alloc] initWithWeekday:@"Friday" withStartMinute:[NSNumber numberWithInt:9*60+10] withDuration:[NSNumber numberWithInt:40]];
-    
-    // F BLOCK TIMESLOTS -----------------------------
-    
-    TimeSlot* FBlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:13*60+45] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* FBlockTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:12*60+55] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* FBlockThursday = [[TimeSlot alloc] initWithWeekday:@"Thursday" withStartMinute:[NSNumber numberWithInt:10*60+25] withDuration:[NSNumber numberWithInt:90]];
-    
-    TimeSlot* FBlockFriday = [[TimeSlot alloc] initWithWeekday:@"Friday" withStartMinute:[NSNumber numberWithInt:10*60+10] withDuration:[NSNumber numberWithInt:40]];
-    
-    // G BLOCK TIMESLOTS -----------------------------
-    
-    TimeSlot* GBlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:14*60+35] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* GBlockTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:13*60+45] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* GBlockThursday = [[TimeSlot alloc] initWithWeekday:@"Thursday" withStartMinute:[NSNumber numberWithInt:8*60+25] withDuration:[NSNumber numberWithInt:90]];
-    
-    TimeSlot* GBlockFriday = [[TimeSlot alloc] initWithWeekday:@"Friday" withStartMinute:[NSNumber numberWithInt:12*60+25] withDuration:[NSNumber numberWithInt:40]];
-    
-    // MORNING MEETING TIMESLOTS -----------------------------
-    
-    TimeSlot* MorningMeetingMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:10*60+5] withDuration:[NSNumber numberWithInt:10]];
-    
-    TimeSlot* MorningMeetingThursday = [[TimeSlot alloc] initWithWeekday:@"Thursday" withStartMinute:[NSNumber numberWithInt:10*60+0] withDuration:[NSNumber numberWithInt:10]];
-    
-    // BREAK TIMESLOTS -----------------------------
-    
-    TimeSlot* BreakTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:9*60+55] withDuration:[NSNumber numberWithInt:10]];
-    
-    TimeSlot* BreakWednesday = [[TimeSlot alloc] initWithWeekday:@"Wednesday"  withStartMinute:[NSNumber numberWithInt:10*60+0] withDuration:[NSNumber numberWithInt:10]];
-    
-    TimeSlot* BreakFriday = [[TimeSlot alloc] initWithWeekday:@"Friday" withStartMinute:[NSNumber numberWithInt:9*60+50] withDuration:[NSNumber numberWithInt:15]];
-    
-    // LUNCH TIMESLOTS -----------------------------
-    
-    TimeSlot* LunchMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:11*60+55] withDuration:[NSNumber numberWithInt:55]];
-    
-    TimeSlot* LunchTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:11*60+55] withDuration:[NSNumber numberWithInt:35]];
-    
-    TimeSlot* LunchWednesday = [[TimeSlot alloc] initWithWeekday:@"Wednesday" withStartMinute:[NSNumber numberWithInt:11*60+40] withDuration:[NSNumber numberWithInt:30]];
-    
-    TimeSlot* LunchThursday = [[TimeSlot alloc] initWithWeekday:@"Thursday" withStartMinute:[NSNumber numberWithInt:11*60+55] withDuration:[NSNumber numberWithInt:45]];
-    
-    TimeSlot* LunchFriday = [[TimeSlot alloc] initWithWeekday:@"Friday" withStartMinute:[NSNumber numberWithInt:11*60+35] withDuration:[NSNumber numberWithInt:45]];
-    
-    // ADVISING TIMESLOTS -----------------------------
-    
-    TimeSlot* AdvisingTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:12*60+30] withDuration:[NSNumber numberWithInt:20]];
-    
-    // PRACTICUM TIMESLOTS -----------------------------
-    
-    TimeSlot* PracticumThursday = [[TimeSlot alloc] initWithWeekday:@"Thursday" withStartMinute:[NSNumber numberWithInt:14*60+20] withDuration:[NSNumber numberWithInt:60]];
-    
-    // ASSEMBLY TIMESLOTS -----------------------------
-    
-    TimeSlot* AssemblyFriday = [[TimeSlot alloc] initWithWeekday:@"Friday" withStartMinute:[NSNumber numberWithInt:10*60+55] withDuration:[NSNumber numberWithInt:40]];
-    
-    // CREATING MUTABLE SET OF BLOCK TIMESLOTS -----------------------------
-    
-    NSMutableSet* ABlockTimeSlots = [[NSMutableSet alloc] initWithObjects:ABlockMonday, ABlockTuesday, ABlockWednesday, ABlockFriday, nil];
-    NSMutableSet* BBlockTimeSlots = [[NSMutableSet alloc] initWithObjects:BBlockMonday, BBlockTuesday, BBlockWednesday, BBlockFriday, nil];
-    NSMutableSet* CBlockTimeSlots = [[NSMutableSet alloc] initWithObjects:CBlockMonday, CBlockTuesday, CBlockWednesday, CBlockFriday, nil];
-    NSMutableSet* DBlockTimeSlots = [[NSMutableSet alloc] initWithObjects:DBlockMonday, DBlockTuesday, DBlockWednesday, DBlockFriday, nil];
-    NSMutableSet* EBlockTimeSlots = [[NSMutableSet alloc] initWithObjects:EBlockMonday, EBlockTuesday, EBlockThursday, EBlockFriday, nil];
-    NSMutableSet* FBlockTimeSlots = [[NSMutableSet alloc] initWithObjects:FBlockMonday, FBlockTuesday, FBlockThursday, FBlockFriday, nil];
-    NSMutableSet* GBlockTimeSlots = [[NSMutableSet alloc] initWithObjects:GBlockMonday, GBlockTuesday, GBlockThursday, GBlockFriday, nil];
-    NSMutableSet* MorningMeetingTimeSlots = [[NSMutableSet alloc] initWithObjects:MorningMeetingMonday, MorningMeetingThursday, nil];
-    NSMutableSet* BreakTimeSlots = [[NSMutableSet alloc] initWithObjects:BreakTuesday, BreakWednesday, BreakFriday, nil];
-    NSMutableSet* LunchTimeSlots = [[NSMutableSet alloc] initWithObjects:LunchMonday, LunchTuesday, LunchWednesday, LunchThursday, LunchFriday, nil];
-    NSMutableSet* AdvisingTimeSlots = [[NSMutableSet alloc] initWithObjects:AdvisingTuesday, nil];
-    NSMutableSet* PracticumTimeSlots = [[NSMutableSet alloc] initWithObjects:PracticumThursday, nil];
-    NSMutableSet* AssemblyTimeSlots = [[NSMutableSet alloc] initWithObjects:AssemblyFriday, nil];
-    
-    // CREATE ACTIVITY
-    
-    Activity* ABlock = [[Activity alloc] initWithName:@"A Block" withColor:@"Red" withTimeSlots:ABlockTimeSlots];
-    Activity* BBlock = [[Activity alloc] initWithName:@"B Block" withColor:@"Purple" withTimeSlots:BBlockTimeSlots];
-    Activity* CBlock = [[Activity alloc] initWithName:@"C Block" withColor:@"DarkBlue" withTimeSlots:CBlockTimeSlots];
-    Activity* DBlock = [[Activity alloc] initWithName:@"D Block" withColor:@"Orange" withTimeSlots:DBlockTimeSlots];
-    Activity* EBlock = [[Activity alloc] initWithName:@"E Block" withColor:@"Pink" withTimeSlots:EBlockTimeSlots];
-    Activity* FBlock = [[Activity alloc] initWithName:@"F Block" withColor:@"Green" withTimeSlots:FBlockTimeSlots];
-    Activity* GBlock = [[Activity alloc] initWithName:@"G Block" withColor:@"LightBlue" withTimeSlots:GBlockTimeSlots];
-    Activity* MorningMeeting = [[Activity alloc] initWithName:@"Morning Meeting" withColor:@"Gray" withTimeSlots:MorningMeetingTimeSlots];
-    Activity* Break = [[Activity alloc] initWithName:@"Break" withColor:@"Gray" withTimeSlots:BreakTimeSlots];
-    Activity* Lunch = [[Activity alloc] initWithName:@"Lunch" withColor:@"Gray" withTimeSlots:LunchTimeSlots];
-    Activity* Advising = [[Activity alloc] initWithName:@"Advising" withColor:@"Gray" withTimeSlots:AdvisingTimeSlots];
-    Activity* Practicum = [[Activity alloc] initWithName:@"Practicum" withColor:@"Gray" withTimeSlots:PracticumTimeSlots];
-    Activity* Assembly = [[Activity alloc] initWithName:@"Assembly" withColor:@"Gray" withTimeSlots:AssemblyTimeSlots];
-    
-    // CREATE MUTABLE SET "SCHEDULE"
-    
-    NSMutableSet* Schedule = [[NSMutableSet alloc] initWithObjects:ABlock, BBlock, CBlock, DBlock, EBlock, FBlock, GBlock, MorningMeeting, Break, Lunch, Advising, Practicum, Assembly, nil];
+    if ([currentWeekday isEqualToString:@"Sunday"] || [currentWeekday isEqualToString:@"Saturday"]) {
+        currentWeekday = @"Monday";
+    }
     
     // PRINTING MONDAY SCHEDULE (TESTING)
     
-    for (Activity* a in Schedule) {
-        for (TimeSlot* t in a.timeSlots) {
-            if ([t.weekday isEqualToString:@"Monday"]) {
-                
-                int intDuration = [t.duration intValue];
-                
-                int intStartMinutes = [t.startMinute intValue];
-                int intStartHour = (intStartMinutes/60)%12;
-                
-                int intEndMinutes = (intStartMinutes + intDuration);
-                int intEndHour = ((intEndMinutes)/60)%12;
-                
-                if (intStartHour == 0)
-                    intStartHour = 12;
-                
-                if (intEndHour == 0)
-                        intEndHour = 12;
-                
-                NSLog(@"%@: %d:%02d - %d:%02d\n",a.name, intStartHour, intStartMinutes%60, intEndHour, intEndMinutes%60);
-                
+    NSArray* weekdaySchedule = [WeeklySchedule dailySchedule:currentWeekday];
+    
+    // determine current and next activities
+    
+    Activity *currentActivity = nil;
+    Activity *nextActivity = nil;
+    
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    unsigned unitFlags =  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:currentTime];
+    
+    int secondsSinceMidnight = 60 * 60 * (int)[components hour] + 60 * (int)[components minute] + (int)[components second];
+    int minutesSinceMidnight = secondsSinceMidnight/60;
+    
+    Activity* a = nil;
+    
+    for (Activity* b in weekdaySchedule) {
+        
+        if (a != nil) {
+            
+            int aStartMinutes = 0;
+            int bStartMinutes = 0;
+            
+            for (TimeSlot* t in a.timeSlots) {
+                aStartMinutes = [t.startMinute intValue];
+            }
+            
+            for (TimeSlot* t in b.timeSlots) {
+                bStartMinutes = [t.startMinute intValue];
+            }
+            
+            if ((currentActivity == nil) && (minutesSinceMidnight >= aStartMinutes) && (minutesSinceMidnight < (bStartMinutes))) {
+                currentActivity = a;
+                nextActivity = b;
+                break;
             }
         }
+        a = b;
     }
+    if (currentActivity == nil) {
+        currentActivity = a;
+    }
+    
+    TimeSlot *nextTimeSlot = nil;
+    
+    for (TimeSlot *t in nextActivity.timeSlots)
+        nextTimeSlot = t;
+    
+    int intNextActivityStartMinute = [nextTimeSlot.startMinute intValue];
+    
+    if (intNextActivityStartMinute > 13*60) {
+        intNextActivityStartMinute -= 12*60;
+    }
+    
+    NSString *stringNextActivityStartTimeLabel = [NSString stringWithFormat:@"%02d:%02d", intNextActivityStartMinute/60, intNextActivityStartMinute%60];
+    nextActivityStartTimeLabel.text = stringNextActivityStartTimeLabel;
+    
+    // update next activity label
+    
+    if (nextActivity) {
+        [self toggleNextActivityLabelVisible:YES];
+        nextActivityLabel.text = nextActivity.name;
+    } else {
+        [self toggleNextActivityLabelVisible:NO];
+    }
+    
+    
+    // set secondsCount to # of seconds until next activity
+    
+    TimeSlot *currentTimeSlot = nil;
+    for (TimeSlot *t in currentActivity.timeSlots) {
+        currentTimeSlot = t;
+    }
+    
+    // calculating remaining time in passing period
+    
+    int totalSecondsLeftInPassing = 0;
+    
+    // if there is a passing period after the end of current activity
+    
+    if (![nextTimeSlot.startMinute isEqualToNumber:[NSNumber numberWithInt:[currentTimeSlot.startMinute intValue]+[currentTimeSlot.duration intValue]]]) {
+        // if we're in the passing period after the current timeslot
+        if (secondsSinceMidnight > ([currentTimeSlot.startMinute intValue]*60+[currentTimeSlot.duration intValue]*60))
+        {
+            totalSecondsLeftInPassing = [nextTimeSlot.startMinute intValue]*60 - secondsSinceMidnight;
+        }
+        if (totalSecondsLeftInPassing < 0)
+            NSLog(@"error: totalSecondsLeftInPassing is negative!!! very bad");
+    }
+    
+    // determine if there is a passing after the current activity and if so, deterine
+    // how much time is left in the passing period
+    
+    int intStartMinutes = [currentTimeSlot.startMinute intValue];
+    int intDuration = [currentTimeSlot.duration intValue];
+    
+    int secondsLeftInActivity = (intStartMinutes*60 + intDuration*60) - secondsSinceMidnight;
+    
+    // are we in a passing period?
+    
+    int hours; int minutes; int seconds;
+    
+    if (totalSecondsLeftInPassing != 0) {
+        currentActivityLabel.text = nil;
+        countdownLabel.textColor = [UIColor redColor];
+        hours = 0;
+        minutes = totalSecondsLeftInPassing / 60;
+        seconds = totalSecondsLeftInPassing % 60;
+        _progressView.hidden = true;
+    }
+    else {
+        
+        // update current activity label
+        
+        currentActivityLabel.text = currentActivity.name;
+        countdownLabel.textColor = [UIColor blackColor];
+        
+        _progressView.hidden = false;
+        float progressNumber = (float)(secondsSinceMidnight - intStartMinutes*60)/(intDuration*60);
+        _progressView.progress = progressNumber;
+        
+        hours = secondsLeftInActivity/3600;
+        minutes = (secondsLeftInActivity%3600) / 60;
+        seconds = (secondsLeftInActivity%3600) % 60;
+    }
+    NSString* timerOutput = [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
+    countdownLabel.text = timerOutput;
+}
+
+- (void) setTimer {
+    
+    countdownTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerRun) userInfo:nil repeats:YES];
+}
+
+// END COUNTDOWN CODE
+
+- (void)toggleNextActivityLabelVisible:(BOOL)visible
+{
+    nextActivityLabel.hidden = !visible;
+    nextActivityStartTimeLabel.hidden = !visible;
 }
 
 - (void)didReceiveMemoryWarning

@@ -7,13 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AA75FAC918F7853300D4F1A1 /* WeeklySchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */; };
+		AAB43A4419082F4C002D07C3 /* ClassyNotInSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB43A4319082F4C002D07C3 /* ClassyNotInSessionViewController.m */; };
 		AAC854ED18F51B9600CD4709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC854EC18F51B9600CD4709 /* Foundation.framework */; };
 		AAC854EF18F51B9600CD4709 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC854EE18F51B9600CD4709 /* CoreGraphics.framework */; };
 		AAC854F118F51B9600CD4709 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC854F018F51B9600CD4709 /* UIKit.framework */; };
 		AAC854F718F51B9600CD4709 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC854F518F51B9600CD4709 /* InfoPlist.strings */; };
 		AAC854F918F51B9600CD4709 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC854F818F51B9600CD4709 /* main.m */; };
 		AAC854FD18F51B9600CD4709 /* ClassyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC854FC18F51B9600CD4709 /* ClassyAppDelegate.m */; };
-		AAC8550018F51B9600CD4709 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC854FE18F51B9600CD4709 /* Main.storyboard */; };
+		AAC8550018F51B9600CD4709 /* lo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC854FE18F51B9600CD4709 /* lo.storyboard */; };
 		AAC8550318F51B9600CD4709 /* ClassyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC8550218F51B9600CD4709 /* ClassyViewController.m */; };
 		AAC8550518F51B9600CD4709 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC8550418F51B9600CD4709 /* Images.xcassets */; };
 		AAC8550C18F51B9600CD4709 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC8550B18F51B9600CD4709 /* XCTest.framework */; };
@@ -23,6 +25,7 @@
 		AAC8551818F51B9600CD4709 /* ClassyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC8551718F51B9600CD4709 /* ClassyTests.m */; };
 		AAC8552318F51BFC00CD4709 /* Activity.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC8552218F51BFC00CD4709 /* Activity.m */; };
 		AAC8552618F51C4200CD4709 /* TimeSlot.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC8552518F51C4200CD4709 /* TimeSlot.m */; };
+		AAD7413D199EC71E00E5B048 /* DailyScheduleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAD7413C199EC71E00E5B048 /* DailyScheduleViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AA75FAC718F7853300D4F1A1 /* WeeklySchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklySchedule.h; sourceTree = "<group>"; };
+		AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklySchedule.m; sourceTree = "<group>"; };
+		AAB43A4219082F4C002D07C3 /* ClassyNotInSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassyNotInSessionViewController.h; sourceTree = "<group>"; };
+		AAB43A4319082F4C002D07C3 /* ClassyNotInSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassyNotInSessionViewController.m; sourceTree = "<group>"; };
 		AAC854E918F51B9600CD4709 /* Classy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Classy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC854EC18F51B9600CD4709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AAC854EE18F51B9600CD4709 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,7 +53,7 @@
 		AAC854FA18F51B9600CD4709 /* Classy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Classy-Prefix.pch"; sourceTree = "<group>"; };
 		AAC854FB18F51B9600CD4709 /* ClassyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassyAppDelegate.h; sourceTree = "<group>"; };
 		AAC854FC18F51B9600CD4709 /* ClassyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassyAppDelegate.m; sourceTree = "<group>"; };
-		AAC854FF18F51B9600CD4709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AAC854FF18F51B9600CD4709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/lo.storyboard; sourceTree = "<group>"; };
 		AAC8550118F51B9600CD4709 /* ClassyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassyViewController.h; sourceTree = "<group>"; };
 		AAC8550218F51B9600CD4709 /* ClassyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassyViewController.m; sourceTree = "<group>"; };
 		AAC8550418F51B9600CD4709 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -59,6 +66,8 @@
 		AAC8552218F51BFC00CD4709 /* Activity.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Activity.m; path = ../Activity.m; sourceTree = "<group>"; };
 		AAC8552418F51C4200CD4709 /* TimeSlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeSlot.h; sourceTree = "<group>"; };
 		AAC8552518F51C4200CD4709 /* TimeSlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeSlot.m; sourceTree = "<group>"; };
+		AAD7413B199EC71E00E5B048 /* DailyScheduleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DailyScheduleViewController.h; sourceTree = "<group>"; };
+		AAD7413C199EC71E00E5B048 /* DailyScheduleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DailyScheduleViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,16 +127,21 @@
 		AAC854F218F51B9600CD4709 /* Classy */ = {
 			isa = PBXGroup;
 			children = (
-				AAC854FE18F51B9600CD4709 /* Main.storyboard */,
-				AAC8552118F51BFC00CD4709 /* Activity.h */,
-				AAC8552218F51BFC00CD4709 /* Activity.m */,
+				AAC854FE18F51B9600CD4709 /* lo.storyboard */,
 				AAC8552418F51C4200CD4709 /* TimeSlot.h */,
 				AAC8552518F51C4200CD4709 /* TimeSlot.m */,
+				AAC8552118F51BFC00CD4709 /* Activity.h */,
+				AAC8552218F51BFC00CD4709 /* Activity.m */,
+				AA75FAC718F7853300D4F1A1 /* WeeklySchedule.h */,
+				AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */,
 				AAC854FB18F51B9600CD4709 /* ClassyAppDelegate.h */,
 				AAC854FC18F51B9600CD4709 /* ClassyAppDelegate.m */,
 				AAC8550118F51B9600CD4709 /* ClassyViewController.h */,
 				AAC8550218F51B9600CD4709 /* ClassyViewController.m */,
-				AAC8550418F51B9600CD4709 /* Images.xcassets */,
+				AAB43A4219082F4C002D07C3 /* ClassyNotInSessionViewController.h */,
+				AAB43A4319082F4C002D07C3 /* ClassyNotInSessionViewController.m */,
+				AAD7413B199EC71E00E5B048 /* DailyScheduleViewController.h */,
+				AAD7413C199EC71E00E5B048 /* DailyScheduleViewController.m */,
 				AAC854F318F51B9600CD4709 /* Supporting Files */,
 			);
 			path = Classy;
@@ -136,6 +150,7 @@
 		AAC854F318F51B9600CD4709 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AAC8550418F51B9600CD4709 /* Images.xcassets */,
 				AAC854F418F51B9600CD4709 /* Classy-Info.plist */,
 				AAC854F518F51B9600CD4709 /* InfoPlist.strings */,
 				AAC854F818F51B9600CD4709 /* main.m */,
@@ -215,7 +230,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "Classy" */;
+			buildConfigurationList = AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "classy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -241,7 +256,7 @@
 			files = (
 				AAC8550518F51B9600CD4709 /* Images.xcassets in Resources */,
 				AAC854F718F51B9600CD4709 /* InfoPlist.strings in Resources */,
-				AAC8550018F51B9600CD4709 /* Main.storyboard in Resources */,
+				AAC8550018F51B9600CD4709 /* lo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,11 +275,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AAB43A4419082F4C002D07C3 /* ClassyNotInSessionViewController.m in Sources */,
 				AAC8550318F51B9600CD4709 /* ClassyViewController.m in Sources */,
 				AAC854F918F51B9600CD4709 /* main.m in Sources */,
 				AAC8552618F51C4200CD4709 /* TimeSlot.m in Sources */,
+				AA75FAC918F7853300D4F1A1 /* WeeklySchedule.m in Sources */,
 				AAC8552318F51BFC00CD4709 /* Activity.m in Sources */,
 				AAC854FD18F51B9600CD4709 /* ClassyAppDelegate.m in Sources */,
+				AAD7413D199EC71E00E5B048 /* DailyScheduleViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,12 +313,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		AAC854FE18F51B9600CD4709 /* Main.storyboard */ = {
+		AAC854FE18F51B9600CD4709 /* lo.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AAC854FF18F51B9600CD4709 /* Base */,
 			);
-			name = Main.storyboard;
+			name = lo.storyboard;
 			sourceTree = "<group>";
 		};
 		AAC8551418F51B9600CD4709 /* InfoPlist.strings */ = {
@@ -392,6 +410,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classy/Classy-Prefix.pch";
 				INFOPLIST_FILE = "Classy/Classy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -405,6 +424,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classy/Classy-Prefix.pch";
 				INFOPLIST_FILE = "Classy/Classy-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -453,7 +473,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "Classy" */ = {
+		AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "classy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AAC8551918F51B9600CD4709 /* Debug */,
@@ -469,6 +489,7 @@
 				AAC8551D18F51B9600CD4709 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AAC8551E18F51B9600CD4709 /* Build configuration list for PBXNativeTarget "ClassyTests" */ = {
 			isa = XCConfigurationList;
@@ -477,6 +498,7 @@
 				AAC8552018F51B9600CD4709 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

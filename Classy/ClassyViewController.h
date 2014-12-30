@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ClassyViewController : UIViewController
+@interface ClassyViewController : UIViewController {
+    
+    IBOutlet UILabel* countdownLabel;
+    IBOutlet UILabel* currentActivityLabel;
+    IBOutlet UILabel* nextActivityLabel;
+    IBOutlet UILabel* nextActivityStartTimeLabel;
+    
+    NSTimer* countdownTimer;
+}
 
 @end
+
