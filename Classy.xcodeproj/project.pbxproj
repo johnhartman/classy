@@ -16,7 +16,7 @@
 		AAC854F718F51B9600CD4709 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AAC854F518F51B9600CD4709 /* InfoPlist.strings */; };
 		AAC854F918F51B9600CD4709 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC854F818F51B9600CD4709 /* main.m */; };
 		AAC854FD18F51B9600CD4709 /* ClassyAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC854FC18F51B9600CD4709 /* ClassyAppDelegate.m */; };
-		AAC8550018F51B9600CD4709 /* lo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC854FE18F51B9600CD4709 /* lo.storyboard */; };
+		AAC8550018F51B9600CD4709 /* classy.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AAC854FE18F51B9600CD4709 /* classy.storyboard */; };
 		AAC8550318F51B9600CD4709 /* ClassyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAC8550218F51B9600CD4709 /* ClassyViewController.m */; };
 		AAC8550518F51B9600CD4709 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AAC8550418F51B9600CD4709 /* Images.xcassets */; };
 		AAC8550C18F51B9600CD4709 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC8550B18F51B9600CD4709 /* XCTest.framework */; };
@@ -56,7 +56,7 @@
 		AAC854FA18F51B9600CD4709 /* Classy-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Classy-Prefix.pch"; sourceTree = "<group>"; };
 		AAC854FB18F51B9600CD4709 /* ClassyAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassyAppDelegate.h; sourceTree = "<group>"; };
 		AAC854FC18F51B9600CD4709 /* ClassyAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassyAppDelegate.m; sourceTree = "<group>"; };
-		AAC854FF18F51B9600CD4709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/lo.storyboard; sourceTree = "<group>"; };
+		AAC854FF18F51B9600CD4709 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/classy.storyboard; sourceTree = "<group>"; };
 		AAC8550118F51B9600CD4709 /* ClassyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassyViewController.h; sourceTree = "<group>"; };
 		AAC8550218F51B9600CD4709 /* ClassyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassyViewController.m; sourceTree = "<group>"; };
 		AAC8550418F51B9600CD4709 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		AAC854F218F51B9600CD4709 /* Classy */ = {
 			isa = PBXGroup;
 			children = (
-				AAC854FE18F51B9600CD4709 /* lo.storyboard */,
+				AAC854FE18F51B9600CD4709 /* classy.storyboard */,
 				AAC8552418F51C4200CD4709 /* TimeSlot.h */,
 				AAC8552518F51C4200CD4709 /* TimeSlot.m */,
 				AAC8552118F51BFC00CD4709 /* Activity.h */,
@@ -235,7 +235,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "Classy" */;
+			buildConfigurationList = AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "classy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -261,7 +261,7 @@
 			files = (
 				AAC8550518F51B9600CD4709 /* Images.xcassets in Resources */,
 				AAC854F718F51B9600CD4709 /* InfoPlist.strings in Resources */,
-				AAC8550018F51B9600CD4709 /* lo.storyboard in Resources */,
+				AAC8550018F51B9600CD4709 /* classy.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,12 +319,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		AAC854FE18F51B9600CD4709 /* lo.storyboard */ = {
+		AAC854FE18F51B9600CD4709 /* classy.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				AAC854FF18F51B9600CD4709 /* Base */,
 			);
-			name = lo.storyboard;
+			name = classy.storyboard;
 			sourceTree = "<group>";
 		};
 		AAC8551418F51B9600CD4709 /* InfoPlist.strings */ = {
@@ -479,7 +479,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "Classy" */ = {
+		AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "classy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AAC8551918F51B9600CD4709 /* Debug */,
