@@ -47,7 +47,7 @@
     NSString* initialPage;
     
     UIViewController *mainViewController;
-    UIStoryboard *board = [UIStoryboard storyboardWithName:@"lo" bundle:nil];
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"classy" bundle:nil];
     
     if ((![currentWeekday isEqualToString:@"Sunday"] && ![currentWeekday isEqualToString:@"Saturday"]) && (minutesSinceMidnight >= 8*60+25) && (minutesSinceMidnight < 15*60+25)) {
         mainViewController = [board instantiateViewControllerWithIdentifier:@"InSession"];
@@ -87,7 +87,7 @@
     // if current time is during school hours, load InSession, if not load NotInSession
     
     UIViewController *mainViewController;
-    UIStoryboard *board = [UIStoryboard storyboardWithName:@"lo" bundle:nil];
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"classy" bundle:nil];
     
     if ((![currentWeekday isEqualToString:@"Sunday"] && ![currentWeekday isEqualToString:@"Saturday"]) && (minutesSinceMidnight >= 8*60+25) && (minutesSinceMidnight < 15*60+25)) {
         mainViewController = [board instantiateViewControllerWithIdentifier:@"InSession"];
