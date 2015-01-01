@@ -109,8 +109,11 @@
         intNextActivityStartMinute -= 12*60;
     }
     
-    NSString *stringNextActivityStartTimeLabel = [NSString stringWithFormat:@"%02d:%02d", intNextActivityStartMinute/60, intNextActivityStartMinute%60];
-    nextActivityStartTimeLabel.text = stringNextActivityStartTimeLabel;
+    NSString *stringNextActivityStartTimeLabel = [NSString stringWithFormat:@"%2d:%02d", intNextActivityStartMinute/60, intNextActivityStartMinute%60];
+    
+    // trim whitespace so that times with single digit hour values are centered
+    
+    nextActivityStartTimeLabel.text = [stringNextActivityStartTimeLabel stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
     
     // update next activity label
     

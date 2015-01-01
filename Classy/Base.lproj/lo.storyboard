@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
@@ -54,15 +54,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqP-zY-dkd">
-                                <rect key="frame" x="85" y="357" width="150" height="47"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="47" id="0D4-4f-vwB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yfi-ZU-KJE">
                                 <rect key="frame" x="48" y="192" width="224" height="61"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
@@ -74,6 +65,15 @@
                             <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="Ill-ym-nc5">
                                 <rect key="frame" x="141" y="531" width="39" height="37"/>
                             </pageControl>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xqP-zY-dkd">
+                                <rect key="frame" x="85" y="352" width="150" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="0D4-4f-vwB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="50"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -233,7 +233,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="aBd-1I-Aw7"/>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="Ufj-Pm-ahr"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlH-tG-dfW">
@@ -424,6 +424,11 @@
                         <outlet property="activity9EndTime" destination="U5U-9b-BkR" id="2Hk-dd-nEz"/>
                         <outlet property="activity9Label" destination="LzV-TN-AmX" id="rHv-wf-QvE"/>
                         <outlet property="activity9StartTime" destination="sMp-Xt-vsZ" id="87R-RO-15I"/>
+                        <outlet property="fridayButton" destination="7iT-hg-H24" id="2PU-KN-U4L"/>
+                        <outlet property="mondayButton" destination="oF5-g2-g8z" id="XtH-ar-8KI"/>
+                        <outlet property="thursdayButton" destination="sVy-C1-RjM" id="m0X-Fe-EUA"/>
+                        <outlet property="tuesdayButton" destination="LlH-tG-dfW" id="V8o-Nt-iYb"/>
+                        <outlet property="wednesdayButton" destination="JRv-lU-RIP" id="fI1-Af-OZs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydf-DG-e4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
