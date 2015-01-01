@@ -12,6 +12,7 @@
 
 @implementation ClassyAppDelegate
 
+// this should be view did load ???
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
@@ -35,8 +36,8 @@
     long minutesSinceMidnight = secondsSinceMidnight/60;
     
     // Check whether current time is during school
+    /*
     
-    UIViewController *mainViewController;
     // If it is, load ClassyViewController
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"lo" bundle:nil];
     if ((![currentWeekday isEqualToString:@"Sunday"] && ![currentWeekday isEqualToString:@"Saturday"]) && (minutesSinceMidnight >= 8*60+25) && (minutesSinceMidnight < 15*60+25)) {
@@ -46,9 +47,15 @@
     else {
         // If not (or it's a weekend), load ClassyNotInSessionViewController
         mainViewController = [board instantiateViewControllerWithIdentifier:@"Daily Schedule"];
-    }
+    } 
+    */
     // Display the view controller
     
+    UIViewController *mainViewController;
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"lo" bundle:nil];
+    mainViewController = [board instantiateViewControllerWithIdentifier:@"PageView"];
+    
+    // ???????????????????????????????????????????????????
     [self.window addSubview:mainViewController.view];
     [self.window setRootViewController:mainViewController];
     [self.window makeKeyAndVisible];
