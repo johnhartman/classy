@@ -24,8 +24,7 @@ static ClassyPageViewController *classyPageViewController;
     [theDateFormatter setDateFormat:@"EEEE"];
     NSString *currentWeekday =  [theDateFormatter stringFromDate:currentTime];
     
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     unsigned unitFlags =  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     NSDateComponents *components = [gregorian components:unitFlags fromDate:currentTime];
     
@@ -38,7 +37,6 @@ static ClassyPageViewController *classyPageViewController;
     return false;
 }
 
-// this should be view did load ???
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
