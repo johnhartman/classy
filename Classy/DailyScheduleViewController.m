@@ -10,6 +10,7 @@
 #import "WeeklySchedule.h"
 #import "Activity.h"
 #import "TimeSlot.h"
+#import "ClassyAppDelegate.h"
 
 @interface DailyScheduleViewController ()
 
@@ -73,6 +74,8 @@ static NSArray* rows;
     
     // set only the current weekday's button to blue, set the rest to gray
   
+    UIColor* highlightColor = [ClassyAppDelegate getHighlightColor];
+    
     [self.mondayButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.tuesdayButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     [self.wednesdayButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
@@ -80,19 +83,19 @@ static NSArray* rows;
     [self.fridayButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
     
     if ([weekday isEqualToString:@"Monday"]) {
-        [self.mondayButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [self.mondayButton setTitleColor:highlightColor forState:UIControlStateNormal];
     }
     if ([weekday isEqualToString:@"Tuesday"]) {
-        [self.tuesdayButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [self.tuesdayButton setTitleColor:highlightColor forState:UIControlStateNormal];
     }
     if ([weekday isEqualToString:@"Wednesday"]) {
-        [self.wednesdayButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [self.wednesdayButton setTitleColor:highlightColor forState:UIControlStateNormal];
     }
     if ([weekday isEqualToString:@"Thursday"]) {
-        [self.thursdayButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [self.thursdayButton setTitleColor:highlightColor forState:UIControlStateNormal];
     }
     if ([weekday isEqualToString:@"Friday"]) {
-        [self.fridayButton setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+        [self.fridayButton setTitleColor:highlightColor forState:UIControlStateNormal];
     }
 
     //

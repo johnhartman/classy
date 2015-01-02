@@ -10,6 +10,8 @@
 
 @interface ClassyAppDelegate : UIResponder <UIApplicationDelegate>
 
++ (UIColor*)getHighlightColor;
+
 @property (strong, nonatomic) UIWindow *window;
 
 @end

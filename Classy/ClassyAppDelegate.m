@@ -61,6 +61,12 @@
     
     return YES;
 }
+
++ (UIColor*)getHighlightColor
+{
+    return [UIColor colorWithRed:0 green:0.533 blue:1.0 alpha:1.0];
+}
+
 /*
 - (NSUInteger) supportedInterfaceOrientations {
     // Return a bitmask of supported orientations. If you need more,

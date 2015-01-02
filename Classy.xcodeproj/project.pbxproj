@@ -230,12 +230,15 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Natalie Hartman";
 				TargetAttributes = {
+					AAC854E818F51B9600CD4709 = {
+						DevelopmentTeam = 287Y97AVP6;
+					};
 					AAC8550918F51B9600CD4709 = {
 						TestTargetID = AAC854E818F51B9600CD4709;
 					};
 				};
 			};
-			buildConfigurationList = AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "classy" */;
+			buildConfigurationList = AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "Classy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -413,11 +416,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classy/Classy-Prefix.pch";
 				INFOPLIST_FILE = "Classy/Classy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -427,11 +433,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Classy/Classy-Prefix.pch";
 				INFOPLIST_FILE = "Classy/Classy-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -479,7 +488,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "classy" */ = {
+		AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "Classy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AAC8551918F51B9600CD4709 /* Debug */,
