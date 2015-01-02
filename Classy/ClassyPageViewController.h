@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface ClassyPageViewController : UIPageViewController
+@property UIPageViewController *uiPageViewController;
 
 @end

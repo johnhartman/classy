@@ -21,8 +21,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [super viewDidLoad];
-    
+    // allocate our page view controller
+    self.uiPageViewController = [[UIPageViewController alloc]
+                                 initWithTransitionStyle:UIPageViewControllerTransitionStyleScroll
+                                 navigationOrientation:UIPageViewControllerNavigationOrientationHorizontal
+                                 options: nil];
     self.dataSource = self;
     
     // Determine whether class is in session
@@ -44,27 +47,25 @@
     
     // if current time is during school hours, load InSession, if not load NotInSession
     
-    NSString* initialPage;
-    
-    UIViewController *mainViewController;
+    UIViewController *initialContentView;
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"classy" bundle:nil];
     
     if ((![currentWeekday isEqualToString:@"Sunday"] && ![currentWeekday isEqualToString:@"Saturday"]) && (minutesSinceMidnight >= 8*60+25) && (minutesSinceMidnight < 15*60+25)) {
-        mainViewController = [board instantiateViewControllerWithIdentifier:@"InSession"];
+        initialContentView = [board instantiateViewControllerWithIdentifier:@"InSession"];
     }
     else {
         // If not (or it's a weekend), load ClassyNotInSessionViewController
-        mainViewController = [board instantiateViewControllerWithIdentifier:@"NotInSession"];
+        initialContentView = [board instantiateViewControllerWithIdentifier:@"NotInSession"];
     }
     
     //
     
-    [self setViewControllers:@[[self.storyboard instantiateViewControllerWithIdentifier:initialPage]] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    [self setViewControllers:[[NSArray alloc] initWithObjects:initialContentView, nil] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    if ([viewController isKindOfClass:[ClassyViewController class]])
+    if ([viewController isKindOfClass:[ClassyViewController class]] || [viewController isKindOfClass:[ClassyNotInSessionViewController class]])
         return nil;
     
     // Determine whether class is in session
