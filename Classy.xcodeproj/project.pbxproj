@@ -231,14 +231,15 @@
 				ORGANIZATIONNAME = "Natalie Hartman";
 				TargetAttributes = {
 					AAC854E818F51B9600CD4709 = {
-						DevelopmentTeam = 287Y97AVP6;
+						DevelopmentTeam = W89JWC55FL;
 					};
 					AAC8550918F51B9600CD4709 = {
+						DevelopmentTeam = W89JWC55FL;
 						TestTargetID = AAC854E818F51B9600CD4709;
 					};
 				};
 			};
-			buildConfigurationList = AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "Classy" */;
+			buildConfigurationList = AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "classy" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -488,7 +489,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "Classy" */ = {
+		AAC854E418F51B9600CD4709 /* Build configuration list for PBXProject "classy" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AAC8551918F51B9600CD4709 /* Debug */,
