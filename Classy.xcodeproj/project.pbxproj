@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		522065A91A56999200E62FFA /* ClassyPageControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 522065A81A56999200E62FFA /* ClassyPageControl.m */; };
 		AA6061541A553498004FD40D /* ClassyPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6061531A553498004FD40D /* ClassyPageViewController.m */; };
 		AA75FAC918F7853300D4F1A1 /* WeeklySchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */; };
 		AAB43A4419082F4C002D07C3 /* ClassyNotInSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB43A4319082F4C002D07C3 /* ClassyNotInSessionViewController.m */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		522065A71A56998400E62FFA /* ClassyPageControl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassyPageControl.h; sourceTree = "<group>"; };
+		522065A81A56999200E62FFA /* ClassyPageControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassyPageControl.m; sourceTree = "<group>"; };
 		AA6061521A553498004FD40D /* ClassyPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassyPageViewController.h; sourceTree = "<group>"; };
 		AA6061531A553498004FD40D /* ClassyPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassyPageViewController.m; sourceTree = "<group>"; };
 		AA75FAC718F7853300D4F1A1 /* WeeklySchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklySchedule.h; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 				AAC8552518F51C4200CD4709 /* TimeSlot.m */,
 				AAC8552118F51BFC00CD4709 /* Activity.h */,
 				AAC8552218F51BFC00CD4709 /* Activity.m */,
+				522065A71A56998400E62FFA /* ClassyPageControl.h */,
+				522065A81A56999200E62FFA /* ClassyPageControl.m */,
 				AA75FAC718F7853300D4F1A1 /* WeeklySchedule.h */,
 				AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */,
 				AAC854FB18F51B9600CD4709 /* ClassyAppDelegate.h */,
@@ -285,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAB43A4419082F4C002D07C3 /* ClassyNotInSessionViewController.m in Sources */,
+				522065A91A56999200E62FFA /* ClassyPageControl.m in Sources */,
 				AAC8550318F51B9600CD4709 /* ClassyViewController.m in Sources */,
 				AA6061541A553498004FD40D /* ClassyPageViewController.m in Sources */,
 				AAC854F918F51B9600CD4709 /* main.m in Sources */,

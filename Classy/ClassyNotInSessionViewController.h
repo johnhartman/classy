@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ClassyNotInSessionViewController : UIViewController
-
+@interface ClassyNotInSessionViewController : UIViewController<UIScrollViewDelegate>
+@property IBOutlet UIPageControl* pageControl;
+-   (IBAction) handlePageControlValueChanged:(id)sender;
 @end

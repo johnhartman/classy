@@ -10,6 +10,7 @@
 #import "ClassyViewController.h"
 #import "ClassyNotInSessionViewController.h"
 #import "DailyScheduleViewController.h"
+#import "ClassyAppDelegate.h"
 
 @interface ClassyPageViewController ()
 
@@ -28,37 +29,19 @@
                                  options: nil];
     self.dataSource = self;
     
-    // Determine whether class is in session
-    
-    NSDate *currentTime = [NSDate date];
-    
-    NSDateFormatter* theDateFormatter = [[NSDateFormatter alloc] init];
-    [theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-    [theDateFormatter setDateFormat:@"EEEE"];
-    NSString *currentWeekday =  [theDateFormatter stringFromDate:currentTime];
-    
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
-    unsigned unitFlags =  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    NSDateComponents *components = [gregorian components:unitFlags fromDate:currentTime];
-    
-    long secondsSinceMidnight = 60 * 60 * [components hour] + 60 * [components minute] + [components second];
-    long minutesSinceMidnight = secondsSinceMidnight/60;
-    
-    // if current time is during school hours, load InSession, if not load NotInSession
     
     UIViewController *initialContentView;
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"classy" bundle:nil];
     
-    if ((![currentWeekday isEqualToString:@"Sunday"] && ![currentWeekday isEqualToString:@"Saturday"]) && (minutesSinceMidnight >= 8*60+25) && (minutesSinceMidnight < 15*60+25)) {
+    // if current time is during school hours, load InSession, if not load NotInSession
+
+    if ([ClassyAppDelegate isSchoolInSession]) {
         initialContentView = [board instantiateViewControllerWithIdentifier:@"InSession"];
     }
     else {
         // If not (or it's a weekend), load ClassyNotInSessionViewController
         initialContentView = [board instantiateViewControllerWithIdentifier:@"NotInSession"];
     }
-    
-    //
     
     [self setViewControllers:[[NSArray alloc] initWithObjects:initialContentView, nil] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
@@ -68,37 +51,17 @@
     if ([viewController isKindOfClass:[ClassyViewController class]] || [viewController isKindOfClass:[ClassyNotInSessionViewController class]])
         return nil;
     
-    // Determine whether class is in session
-    
-    NSDate *currentTime = [NSDate date];
-    
-    NSDateFormatter* theDateFormatter = [[NSDateFormatter alloc] init];
-    [theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
-    [theDateFormatter setDateFormat:@"EEEE"];
-    NSString *currentWeekday =  [theDateFormatter stringFromDate:currentTime];
-    
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
-    unsigned unitFlags =  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
-    NSDateComponents *components = [gregorian components:unitFlags fromDate:currentTime];
-    
-    long secondsSinceMidnight = 60 * 60 * [components hour] + 60 * [components minute] + [components second];
-    long minutesSinceMidnight = secondsSinceMidnight/60;
-    
-    // if current time is during school hours, load InSession, if not load NotInSession
-    
     UIViewController *mainViewController;
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"classy" bundle:nil];
     
-    if ((![currentWeekday isEqualToString:@"Sunday"] && ![currentWeekday isEqualToString:@"Saturday"]) && (minutesSinceMidnight >= 8*60+25) && (minutesSinceMidnight < 15*60+25)) {
+    // if current time is during school hours, load InSession, if not load NotInSession
+    if ([ClassyAppDelegate isSchoolInSession]) {
         mainViewController = [board instantiateViewControllerWithIdentifier:@"InSession"];
     }
     else {
         // If not (or it's a weekend), load ClassyNotInSessionViewController
         mainViewController = [board instantiateViewControllerWithIdentifier:@"NotInSession"];
     }
-    
-    //
     
     return mainViewController;
 }
@@ -115,7 +78,25 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void) changePage:(int) page {
+    UIViewController *nextViewController;
+    UIStoryboard *board = [UIStoryboard storyboardWithName:@"classy" bundle:nil];
 
+    if (page == 0) {
+        if ([ClassyAppDelegate isSchoolInSession]) {
+            nextViewController = [board instantiateViewControllerWithIdentifier:@"InSession"];
+        }
+        else {
+            // If not (or it's a weekend), load ClassyNotInSessionViewController
+            nextViewController = [board instantiateViewControllerWithIdentifier:@"NotInSession"];
+        }
+        [self setViewControllers:[[NSArray alloc] initWithObjects:nextViewController, nil] direction:UIPageViewControllerNavigationDirectionReverse animated:YES completion:nil];
+    }
+    else {
+        nextViewController = [board instantiateViewControllerWithIdentifier:@"Daily Schedule"];
+        [self setViewControllers:[[NSArray alloc] initWithObjects:nextViewController, nil] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
+    }
+}
 /*
 #pragma mark - Navigation
 
