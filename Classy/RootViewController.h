@@ -1,4 +1,3 @@
-
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UIViewController <UIScrollViewDelegate>
@@ -7,5 +6,4 @@
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) NSArray *viewControllers;
 - (IBAction)changePage:(id)sender;
-
 @end

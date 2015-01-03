@@ -1,10 +1,5 @@
 #import "RootViewController.h"
 
-static NSString *kNameKey = @"nameKey";
-static NSString *kImageKey = @"imageKey";
-
-#pragma mark -
-
 @implementation RootViewController
 #define NUM_PAGES 2
 

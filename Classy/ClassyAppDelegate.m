@@ -8,13 +8,8 @@
 
 #import "ClassyAppDelegate.h"
 #import "RootViewController.h"
-//#import "ClassyPageViewController.h"
 
 @implementation ClassyAppDelegate
-//static ClassyPageViewController *classyPageViewController;
-//+ (ClassyPageViewController *) classyPageViewController {
-//    return classyPageViewController;
-//}
 + (BOOL) isSchoolInSession {
     NSDate *currentTime = [NSDate date];
     
