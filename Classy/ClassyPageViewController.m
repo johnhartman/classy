@@ -8,7 +8,6 @@
 
 #import "ClassyPageViewController.h"
 #import "ClassyViewController.h"
-#import "ClassyNotInSessionViewController.h"
 #import "DailyScheduleViewController.h"
 #import "ClassyAppDelegate.h"
 
@@ -32,44 +31,21 @@
     // Set the background of the view to match the background of the subviews (all are white)
     self.view.backgroundColor = [UIColor whiteColor];
     
-
-    // if current time is during school hours, load InSession, if not load NotInSession
-    
-    UIViewController *initialContentView;
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"classy" bundle:nil];
     
-    if ([ClassyAppDelegate isSchoolInSession]) {
-        initialContentView = [board instantiateViewControllerWithIdentifier:@"InSession"];
-    }
-    else {
-        // If not (or it's a weekend), load ClassyNotInSessionViewController
-        initialContentView = [board instantiateViewControllerWithIdentifier:@"NotInSession"];
-    }
-    
-    //
+    UIViewController *initialContentView = [board instantiateViewControllerWithIdentifier:@"InSession"];
     
     [self setViewControllers:[[NSArray alloc] initWithObjects:initialContentView, nil] direction:UIPageViewControllerNavigationDirectionForward animated:YES completion:nil];
 }
 
 - (UIViewController *)pageViewController:(UIPageViewController *)pageViewController viewControllerBeforeViewController:(UIViewController *)viewController
 {
-    if ([viewController isKindOfClass:[ClassyViewController class]] || [viewController isKindOfClass:[ClassyNotInSessionViewController class]])
-        return nil;
-    
-    // if current time is during school hours, load InSession, if not load NotInSession
+    if ([viewController isKindOfClass:[ClassyViewController class]]) return nil;
     
     UIViewController *mainViewController;
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"classy" bundle:nil];
     
-    if ([ClassyAppDelegate isSchoolInSession]) {
-        mainViewController = [board instantiateViewControllerWithIdentifier:@"InSession"];
-    }
-    else {
-        // If not (or it's a weekend), load ClassyNotInSessionViewController
-        mainViewController = [board instantiateViewControllerWithIdentifier:@"NotInSession"];
-    }
-    
-    //
+    mainViewController = [board instantiateViewControllerWithIdentifier:@"InSession"];
     
     return mainViewController;
 }

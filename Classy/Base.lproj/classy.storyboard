@@ -5,32 +5,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--Classy Not In Session View Controller-->
-        <scene sceneID="lYW-67-PYa">
-            <objects>
-                <viewController storyboardIdentifier="NotInSession" id="ixE-oV-bvD" customClass="ClassyNotInSessionViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ctj-Ql-GNq"/>
-                        <viewControllerLayoutGuide type="bottom" id="gbO-NZ-Ush"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DNt-VO-cWE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="School is not in session" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibd-tP-UfD">
-                                <rect key="frame" x="74" y="229" width="172" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="p6O-mp-P4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-207" y="-425"/>
-        </scene>
         <!--PageView-->
         <scene sceneID="3lh-az-uqK">
             <objects>
@@ -79,6 +53,12 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
+                            <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="School is not in session" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u3L-CN-1qK">
+                                <rect key="frame" x="74" y="168" width="172" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -103,6 +83,7 @@
                         <outlet property="currentActivityLabel" destination="BgS-du-i0y" id="AlN-om-RZC"/>
                         <outlet property="nextActivityLabel" destination="ASE-1B-eKw" id="dnP-Ci-mnU"/>
                         <outlet property="nextActivityStartTimeLabel" destination="xqP-zY-dkd" id="qIL-KZ-Jqw"/>
+                        <outlet property="notInSessionLabel" destination="u3L-CN-1qK" id="c9V-GU-mu5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

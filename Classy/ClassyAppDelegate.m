@@ -8,7 +8,6 @@
 
 #import "ClassyAppDelegate.h"
 #import "ClassyViewController.h"
-#import "ClassyNotInSessionViewController.h"
 #import "ClassyPageViewController.h"
 
 @implementation ClassyAppDelegate
