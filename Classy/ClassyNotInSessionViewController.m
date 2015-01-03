@@ -7,8 +7,6 @@
 //
 
 #import "ClassyNotInSessionViewController.h"
-#import "ClassyAppDelegate.h"
-#import "ClassyPageViewController.h"
 
 @interface ClassyNotInSessionViewController ()
 
@@ -35,11 +33,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
--   (IBAction) handlePageControlValueChanged:(id)sender;
-{
-    ClassyPageViewController *classyPageViewController = [ClassyAppDelegate classyPageViewController];
-    [classyPageViewController changePage:self.pageControl.currentPage];
 }
 
 /*

@@ -10,5 +10,5 @@
 
 @interface ClassyPageViewController : UIPageViewController
 @property UIPageViewController *uiPageViewController;
-- (void) changePage:(int) page;
+
 @end
