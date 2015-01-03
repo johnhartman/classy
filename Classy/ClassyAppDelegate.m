@@ -7,14 +7,14 @@
 //
 
 #import "ClassyAppDelegate.h"
-#import "ClassyViewController.h"
-#import "ClassyPageViewController.h"
+#import "RootViewController.h"
+//#import "ClassyPageViewController.h"
 
 @implementation ClassyAppDelegate
-static ClassyPageViewController *classyPageViewController;
-+ (ClassyPageViewController *) classyPageViewController {
-    return classyPageViewController;
-}
+//static ClassyPageViewController *classyPageViewController;
+//+ (ClassyPageViewController *) classyPageViewController {
+//    return classyPageViewController;
+//}
 + (BOOL) isSchoolInSession {
     NSDate *currentTime = [NSDate date];
     
@@ -44,10 +44,10 @@ static ClassyPageViewController *classyPageViewController;
     // Display the view controller
     
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"classy" bundle:nil];
-    classyPageViewController = [board instantiateViewControllerWithIdentifier:@"PageView"];
+    UIViewController *rootViewController = [board instantiateViewControllerWithIdentifier:@"RootViewController"];
     
-    [self.window addSubview:classyPageViewController.view];
-    [self.window setRootViewController:classyPageViewController];
+    [self.window addSubview:rootViewController.view];
+    [self.window setRootViewController:rootViewController];
     [self.window makeKeyAndVisible];
     
     return YES;
