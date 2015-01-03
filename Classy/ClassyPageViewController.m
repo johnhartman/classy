@@ -28,6 +28,9 @@
                                  options: nil];
     self.dataSource = self;
     
+    // Set the background of the view to match the background of the subviews (all are white)
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     // Determine whether class is in session
     
     NSDate *currentTime = [NSDate date];
