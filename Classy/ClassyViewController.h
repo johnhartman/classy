@@ -15,6 +15,7 @@
     IBOutlet UILabel* nextActivityLabel;
     IBOutlet UILabel* nextActivityStartTimeLabel;
     
+    IBOutlet UILabel *notInSessionLabel;
     NSTimer* countdownTimer;
 }
 

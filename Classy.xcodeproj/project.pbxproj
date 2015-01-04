@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AA6061541A553498004FD40D /* ClassyPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AA6061531A553498004FD40D /* ClassyPageViewController.m */; };
+		52F729EA1A589C5E005A1F99 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F729E91A589C5E005A1F99 /* RootViewController.m */; };
 		AA75FAC918F7853300D4F1A1 /* WeeklySchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */; };
-		AAB43A4419082F4C002D07C3 /* ClassyNotInSessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AAB43A4319082F4C002D07C3 /* ClassyNotInSessionViewController.m */; };
 		AAC854ED18F51B9600CD4709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC854EC18F51B9600CD4709 /* Foundation.framework */; };
 		AAC854EF18F51B9600CD4709 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC854EE18F51B9600CD4709 /* CoreGraphics.framework */; };
 		AAC854F118F51B9600CD4709 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC854F018F51B9600CD4709 /* UIKit.framework */; };
@@ -40,12 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		AA6061521A553498004FD40D /* ClassyPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassyPageViewController.h; sourceTree = "<group>"; };
-		AA6061531A553498004FD40D /* ClassyPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassyPageViewController.m; sourceTree = "<group>"; };
+		52F729E81A589C5E005A1F99 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		52F729E91A589C5E005A1F99 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		AA75FAC718F7853300D4F1A1 /* WeeklySchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklySchedule.h; sourceTree = "<group>"; };
 		AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeeklySchedule.m; sourceTree = "<group>"; };
-		AAB43A4219082F4C002D07C3 /* ClassyNotInSessionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClassyNotInSessionViewController.h; sourceTree = "<group>"; };
-		AAB43A4319082F4C002D07C3 /* ClassyNotInSessionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClassyNotInSessionViewController.m; sourceTree = "<group>"; };
 		AAC854E918F51B9600CD4709 /* Classy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Classy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AAC854EC18F51B9600CD4709 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		AAC854EE18F51B9600CD4709 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -131,6 +128,8 @@
 			isa = PBXGroup;
 			children = (
 				AAC854FE18F51B9600CD4709 /* classy.storyboard */,
+				52F729E81A589C5E005A1F99 /* RootViewController.h */,
+				52F729E91A589C5E005A1F99 /* RootViewController.m */,
 				AAC8552418F51C4200CD4709 /* TimeSlot.h */,
 				AAC8552518F51C4200CD4709 /* TimeSlot.m */,
 				AAC8552118F51BFC00CD4709 /* Activity.h */,
@@ -139,12 +138,8 @@
 				AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */,
 				AAC854FB18F51B9600CD4709 /* ClassyAppDelegate.h */,
 				AAC854FC18F51B9600CD4709 /* ClassyAppDelegate.m */,
-				AA6061521A553498004FD40D /* ClassyPageViewController.h */,
-				AA6061531A553498004FD40D /* ClassyPageViewController.m */,
 				AAC8550118F51B9600CD4709 /* ClassyViewController.h */,
 				AAC8550218F51B9600CD4709 /* ClassyViewController.m */,
-				AAB43A4219082F4C002D07C3 /* ClassyNotInSessionViewController.h */,
-				AAB43A4319082F4C002D07C3 /* ClassyNotInSessionViewController.m */,
 				AAD7413B199EC71E00E5B048 /* DailyScheduleViewController.h */,
 				AAD7413C199EC71E00E5B048 /* DailyScheduleViewController.m */,
 				AAC854F318F51B9600CD4709 /* Supporting Files */,
@@ -231,7 +226,7 @@
 				ORGANIZATIONNAME = "Natalie Hartman";
 				TargetAttributes = {
 					AAC854E818F51B9600CD4709 = {
-						DevelopmentTeam = W89JWC55FL;
+						DevelopmentTeam = 9K3H46HVXZ;
 					};
 					AAC8550918F51B9600CD4709 = {
 						DevelopmentTeam = W89JWC55FL;
@@ -284,12 +279,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AAB43A4419082F4C002D07C3 /* ClassyNotInSessionViewController.m in Sources */,
 				AAC8550318F51B9600CD4709 /* ClassyViewController.m in Sources */,
-				AA6061541A553498004FD40D /* ClassyPageViewController.m in Sources */,
 				AAC854F918F51B9600CD4709 /* main.m in Sources */,
 				AAC8552618F51C4200CD4709 /* TimeSlot.m in Sources */,
 				AA75FAC918F7853300D4F1A1 /* WeeklySchedule.m in Sources */,
+				52F729EA1A589C5E005A1F99 /* RootViewController.m in Sources */,
 				AAC8552318F51BFC00CD4709 /* Activity.m in Sources */,
 				AAC854FD18F51B9600CD4709 /* ClassyAppDelegate.m in Sources */,
 				AAD7413D199EC71E00E5B048 /* DailyScheduleViewController.m in Sources */,

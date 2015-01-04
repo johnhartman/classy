@@ -7,19 +7,10 @@
 //
 
 #import "ClassyAppDelegate.h"
-#import "ClassyViewController.h"
-#import "ClassyNotInSessionViewController.h"
+#import "RootViewController.h"
 
 @implementation ClassyAppDelegate
-
-// this should be view did load ???
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    
-    // Determine whether class is in session
-    
++ (BOOL) isSchoolInSession {
     NSDate *currentTime = [NSDate date];
     
     NSDateFormatter* theDateFormatter = [[NSDateFormatter alloc] init];
@@ -27,36 +18,31 @@
     [theDateFormatter setDateFormat:@"EEEE"];
     NSString *currentWeekday =  [theDateFormatter stringFromDate:currentTime];
     
-    NSCalendar *gregorian = [[NSCalendar alloc]
-                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSCalendar *gregorian = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
     unsigned unitFlags =  NSHourCalendarUnit | NSMinuteCalendarUnit | NSSecondCalendarUnit;
     NSDateComponents *components = [gregorian components:unitFlags fromDate:currentTime];
     
     long secondsSinceMidnight = 60 * 60 * [components hour] + 60 * [components minute] + [components second];
     long minutesSinceMidnight = secondsSinceMidnight/60;
     
-    // Check whether current time is during school
-    /*
-    
-    // If it is, load ClassyViewController
-    UIStoryboard *board = [UIStoryboard storyboardWithName:@"lo" bundle:nil];
     if ((![currentWeekday isEqualToString:@"Sunday"] && ![currentWeekday isEqualToString:@"Saturday"]) && (minutesSinceMidnight >= 8*60+25) && (minutesSinceMidnight < 15*60+25)) {
-        //mainViewController = [board instantiateViewControllerWithIdentifier:@"InSession"];
-        mainViewController = [board instantiateViewControllerWithIdentifier:@"InSession"];
+        return true;
     }
-    else {
-        // If not (or it's a weekend), load ClassyNotInSessionViewController
-        mainViewController = [board instantiateViewControllerWithIdentifier:@"Daily Schedule"];
-    } 
-    */
+    return false;
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    // Override point for customization after application launch.
+    
     // Display the view controller
     
     UIStoryboard *board = [UIStoryboard storyboardWithName:@"classy" bundle:nil];
-    UIViewController *mainViewController = [board instantiateViewControllerWithIdentifier:@"PageView"];
+    UIViewController *rootViewController = [board instantiateViewControllerWithIdentifier:@"RootViewController"];
     
-    // ???????????????????????????????????????????????????
-    [self.window addSubview:mainViewController.view];
-    [self.window setRootViewController:mainViewController];
+    [self.window addSubview:rootViewController.view];
+    [self.window setRootViewController:rootViewController];
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -67,20 +53,6 @@
     return [UIColor colorWithRed:0 green:0.533 blue:1.0 alpha:1.0];
 }
 
-/*
-- (NSUInteger) supportedInterfaceOrientations {
-    // Return a bitmask of supported orientations. If you need more,
-    // use bitwise or (see the commented return).
-    return UIInterfaceOrientationMaskPortrait;
-    // return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown;
-}
-
-- (UIInterfaceOrientation) preferredInterfaceOrientationForPresentation {
-    // Return the orientation you'd prefer - this is what it launches to. The
-    // user can still rotate. You don't have to implement this method, in which
-    // case it launches in the current orientation
-    return UIInterfaceOrientationPortrait;
-} */
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

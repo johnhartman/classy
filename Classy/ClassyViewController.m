@@ -10,6 +10,7 @@
 #import "TimeSlot.h"
 #import "Activity.h"
 #import "WeeklySchedule.h"
+#import "ClassyAppDelegate.h"
 
 @interface ClassyViewController ()
 
@@ -30,12 +31,30 @@
     self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     
     self.progressView.center = self.view.center;
+    [self timerRun];
     [self.view addSubview:self.progressView];
 }
 
 // COUNTDOWN CODE
 
 - (void) timerRun {
+    if ([ClassyAppDelegate isSchoolInSession]) {
+        notInSessionLabel.hidden = YES;
+        countdownLabel.hidden = NO;
+        currentActivityLabel.hidden = NO;
+        nextActivityLabel.hidden = NO;
+        nextActivityStartTimeLabel.hidden = NO;
+        self.progressView.hidden = NO;
+    }
+    else {
+        notInSessionLabel.hidden = NO;
+        countdownLabel.hidden = YES;
+        currentActivityLabel.hidden = YES;
+        nextActivityLabel.hidden = YES;
+        nextActivityStartTimeLabel.hidden = YES;
+        self.progressView.hidden = YES;
+        return;
+    }
     // get the weekday schedule (copy/move from viewDidLoad above)
     
     // ESTABLISHING CURRENT DATE AND TIME

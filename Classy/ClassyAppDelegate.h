@@ -11,6 +11,7 @@
 @interface ClassyAppDelegate : UIResponder <UIApplicationDelegate>
 
 + (UIColor*)getHighlightColor;
++ (BOOL) isSchoolInSession;
 
 @property (strong, nonatomic) UIWindow *window;
 
