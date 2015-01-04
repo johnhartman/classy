@@ -107,11 +107,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgD-fq-VEe">
-                                <rect key="frame" x="0.0" y="-8" width="320" height="550"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZgD-fq-VEe">
+                                <rect key="frame" x="0.0" y="46" width="320" height="496"/>
                             </scrollView>
-                            <pageControl opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="HkU-ba-8fj">
-                                <rect key="frame" x="141" y="539" width="39" height="37"/>
+                            <pageControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="2" translatesAutoresizingMaskIntoConstraints="NO" id="HkU-ba-8fj">
+                                <rect key="frame" x="149" y="539" width="23" height="37"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="currentPageIndicatorTintColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                 <connections>
@@ -120,6 +120,12 @@
                             </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZgD-fq-VEe" firstAttribute="centerX" secondItem="HkU-ba-8fj" secondAttribute="centerX" id="3Qt-Gi-nve"/>
+                            <constraint firstItem="llc-4S-rK4" firstAttribute="top" secondItem="HkU-ba-8fj" secondAttribute="bottom" constant="-8" id="AgB-hC-6Ff" userLabel="Vertical Space - Bottom Layout Guide - Page Control"/>
+                            <constraint firstItem="ZgD-fq-VEe" firstAttribute="leading" secondItem="M9W-I6-T6F" secondAttribute="leading" id="YZ0-K7-8GQ"/>
+                            <constraint firstItem="llc-4S-rK4" firstAttribute="top" secondItem="ZgD-fq-VEe" secondAttribute="bottom" constant="26" id="zd8-0i-I4z"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="pageControl" destination="HkU-ba-8fj" id="jk7-gK-Zp2"/>
@@ -129,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kjD-nx-DsD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="498" y="247"/>
+            <point key="canvasLocation" x="-541" y="247"/>
         </scene>
         <!--Daily Schedule View Controller-->
         <scene sceneID="okz-fW-Sus">
@@ -143,6 +149,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oF5-g2-g8z">
+                                <rect key="frame" x="54" y="100" width="32" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="Rn8-Xc-Q2i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="M">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="Ufj-Pm-ahr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlH-tG-dfW">
+                                <rect key="frame" x="99" y="100" width="32" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="KHN-9j-AAL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="T">
+                                    <color key="titleColor" red="0.61211362089999999" green="0.61211362089999999" blue="0.61211362089999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="cfr-Hu-fmh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRv-lU-RIP">
+                                <rect key="frame" x="144" y="100" width="32" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="W">
+                                    <color key="titleColor" red="0.61211362089999999" green="0.61211362089999999" blue="0.61211362089999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="AI8-Kd-Qsr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVy-C1-RjM">
+                                <rect key="frame" x="193" y="100" width="33" height="48"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleColor" red="0.61211362089999999" green="0.61211362089999999" blue="0.61211362089999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="9Oq-O1-zdl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iT-hg-H24">
+                                <rect key="frame" x="234" y="100" width="32" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="QhB-uJ-1J6"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <state key="normal" title="F">
+                                    <color key="titleColor" red="0.61211362089999999" green="0.61211362089999999" blue="0.61211362089999999" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="exS-EF-BxZ"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7DE-05-aTx">
                                 <rect key="frame" x="166" y="156" width="55" height="24"/>
                                 <constraints>
@@ -276,70 +346,6 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oF5-g2-g8z">
-                                <rect key="frame" x="54" y="100" width="32" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="Rn8-Xc-Q2i"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="M">
-                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="Ufj-Pm-ahr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LlH-tG-dfW">
-                                <rect key="frame" x="99" y="100" width="32" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="KHN-9j-AAL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="T">
-                                    <color key="titleColor" red="0.61211362089999999" green="0.61211362089999999" blue="0.61211362089999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="cfr-Hu-fmh"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRv-lU-RIP">
-                                <rect key="frame" x="144" y="100" width="32" height="48"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="W">
-                                    <color key="titleColor" red="0.61211362089999999" green="0.61211362089999999" blue="0.61211362089999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="AI8-Kd-Qsr"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sVy-C1-RjM">
-                                <rect key="frame" x="193" y="100" width="33" height="48"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="Th">
-                                    <color key="titleColor" red="0.61211362089999999" green="0.61211362089999999" blue="0.61211362089999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="9Oq-O1-zdl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7iT-hg-H24">
-                                <rect key="frame" x="234" y="100" width="32" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="32" id="QhB-uJ-1J6"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
-                                <state key="normal" title="F">
-                                    <color key="titleColor" red="0.61211362089999999" green="0.61211362089999999" blue="0.61211362089999999" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="exS-EF-BxZ"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="–" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Yy-Gl-39V">
                                 <rect key="frame" x="222" y="156" width="15" height="24"/>
                                 <constraints>
@@ -661,6 +667,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ydf-DG-e4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="157" y="247"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="G62-Ad-kA2">
+            <objects>
+                <viewController id="ITA-GT-yk6" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5GY-mP-d7P"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sho-Ou-WPK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="u5u-im-8Xh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m89-QO-DVB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="538"/>
+                                <connections>
+                                    <segue destination="A3f-e3-934" kind="embed" id="gWF-bb-A6h"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0cf-mO-kaD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="495" y="247"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cQg-RP-yWH">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="A3f-e3-934" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gjv-5Y-ImN"/>
+                        <viewControllerLayoutGuide type="bottom" id="cjl-2U-adO"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="npN-H3-abt">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="538"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cgp-zT-Iwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
