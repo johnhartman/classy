@@ -44,7 +44,7 @@
         currentActivityLabel.hidden = NO;
         nextActivityLabel.hidden = NO;
         nextActivityStartTimeLabel.hidden = NO;
-        self.progressView.hidden = NO;
+        progressView.hidden = NO;
     }
     else {
         notInSessionLabel.hidden = NO;
@@ -52,7 +52,7 @@
         currentActivityLabel.hidden = YES;
         nextActivityLabel.hidden = YES;
         nextActivityStartTimeLabel.hidden = YES;
-        self.progressView.hidden = YES;
+        progressView.hidden = YES;
         return;
     }
     // get the weekday schedule (copy/move from viewDidLoad above)
