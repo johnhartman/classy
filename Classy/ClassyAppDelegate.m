@@ -25,7 +25,7 @@
     long secondsSinceMidnight = 60 * 60 * [components hour] + 60 * [components minute] + [components second];
     long minutesSinceMidnight = secondsSinceMidnight/60;
     
-    if ((![currentWeekday isEqualToString:@"Sunday"] && ![currentWeekday isEqualToString:@"Saturday"]) && (minutesSinceMidnight >= 8*60+25) && (minutesSinceMidnight < 15*60+25)) {
+    if ((![currentWeekday isEqualToString:@"Sunday"] && ![currentWeekday isEqualToString:@"Saturday"]) && (minutesSinceMidnight >= 8*60+20) && (minutesSinceMidnight < 15*60+20)) {
         return true;
     }
     return false;
