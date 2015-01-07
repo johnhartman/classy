@@ -204,17 +204,26 @@ NSArray *activityLabels;
 }
 
 /**
- * text field manipulations
+ * text field manipulations so that it's displayed above keyboard
 */
-// Moving current text field above keyboard
 - (void) textFieldDidBeginEditing:(UITextField*)textField{
     textField.borderStyle = UITextBorderStyleRoundedRect;
 }
+- (BOOL) textFieldShouldBeginEditing:(UIDisplayNameTextField *)textField {
+    // only allow 'block activities to be customized
+    if ( ! [textField.activity.name containsString:@"Block"] ) return NO;
+    else return YES;
+}
 - (BOOL)textFieldShouldEndEditing:(UIDisplayNameTextField *)textField {
     textField.borderStyle = UITextBorderStyleNone;
+    NSString *newDisplayName = [[NSString alloc] initWithString:textField.text];
+    newDisplayName = [newDisplayName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    // Do not allow empty names
+    if (newDisplayName.length == 0) return NO;
 
     // save the customized block name for the activity (stored as property in textField
-    [CustomBlockNames setName:textField.activity.name withValue:textField.text];
+    [CustomBlockNames setName:textField.activity.name withValue:newDisplayName];
 
     // reload entire the schedule with new display name for block
     [WeeklySchedule initialize];
