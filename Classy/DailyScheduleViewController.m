@@ -16,7 +16,7 @@
 #import "RootViewController.h"
 
 @interface DailyScheduleViewController ()
-
+- (void) resignTextFieldFirstResponder;
 @end
 
 @implementation DailyScheduleViewController
@@ -211,7 +211,10 @@ NSArray *activityLabels;
 }
 - (BOOL) textFieldShouldBeginEditing:(UIDisplayNameTextField *)textField {
     // only allow 'block activities to be customized
-    if ( ! [textField.activity.name containsString:@"Block"] ) return NO;
+    if ( ! [textField.activity.name containsString:@"Block"] ) {
+        [self resignTextFieldFirstResponder];
+        return NO;
+    }
     
     textField.layer.borderColor = [ClassyAppDelegate getHighlightColor].CGColor;
     textField.layer.borderWidth = 1;
@@ -283,6 +286,9 @@ NSArray *activityLabels;
 }
 // dismiss keyboard when tap outside text fields
 - (IBAction)screenWasTapped:(UITapGestureRecognizer *)sender {
+    [self resignTextFieldFirstResponder];
+}
+- (void) resignTextFieldFirstResponder {
     for(UIDisplayNameTextField *f in activityLabels)
         if ([f isFirstResponder]) [f resignFirstResponder];
 }
