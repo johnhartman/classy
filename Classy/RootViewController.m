@@ -32,7 +32,6 @@
     self.scrollView.showsVerticalScrollIndicator = NO;
     self.scrollView.scrollsToTop = NO;
     self.scrollView.delegate = self;
-    self.verticalScrollingEnabled = NO;
     
     self.pageControl.numberOfPages = NUM_PAGES;
     self.pageControl.currentPage = 0;
@@ -60,7 +59,7 @@
 // disable vertical scrolling
 - (void)scrollViewDidScroll:(UIScrollView *) scrollView
 {
-    if ( ! self.verticalScrollingEnabled)[scrollView setContentOffset: CGPointMake(scrollView.contentOffset.x, 0)];
+    [scrollView setContentOffset: CGPointMake(scrollView.contentOffset.x, 0)];
 }
 
 - (IBAction)changePage:(id)sender

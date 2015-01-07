@@ -23,7 +23,10 @@
 
 static NSArray* rows;
 NSMutableDictionary *textFieldToActivity;
-CGRect keyboardRect;
+static const CGFloat ANIMATION_DURATION = 0.4;
+static const CGFloat LITTLE_SPACE = 5;
+CGFloat animatedDistance;
+NSArray *activityLabels;
 
 - (void)initialize
 {
@@ -53,16 +56,9 @@ CGRect keyboardRect;
         currentWeekday = @"Monday";
     }
     
-    _activity1Label.delegate = self;
-    _activity2Label.delegate = self;
-    _activity3Label.delegate = self;
-    _activity4Label.delegate = self;
-    _activity5Label.delegate = self;
-    _activity6Label.delegate = self;
-    _activity7Label.delegate = self;
-    _activity8Label.delegate = self;
-    _activity9Label.delegate = self;
-    _activity10Label.delegate = self;
+    activityLabels = [[NSArray alloc] initWithObjects:_activity1Label,_activity2Label,_activity3Label,_activity4Label,_activity5Label,_activity6Label,_activity7Label,_activity8Label,_activity9Label,_activity10Label,nil];
+
+    for(UIDisplayNameTextField *f in activityLabels) f.delegate = self;
     
     [self updateWeekday:currentWeekday];
 }
@@ -81,9 +77,17 @@ CGRect keyboardRect;
     [super viewDidLoad];
     [self initialize];
 
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
-}
+    // add tap gesture to help in dismissing keyboard
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
+                                        initWithTarget:self
+                                        action:@selector(screenWasTapped:)];// outside textfields
 
+    [self.view addGestureRecognizer:tapGesture];
+
+    // add keyboard notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
+}
 
 - (void)updateWeekday:(NSString*) weekday {
     
@@ -113,8 +117,6 @@ CGRect keyboardRect;
         [self.fridayButton setTitleColor:highlightColor forState:UIControlStateNormal];
     }
 
-    //
-    
     NSArray* weekdaySchedule = [WeeklySchedule dailySchedule:weekday];
     
     NSEnumerator* enumerator = [weekdaySchedule objectEnumerator];
@@ -200,38 +202,72 @@ CGRect keyboardRect;
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (BOOL)textFieldShouldBeginEditing:(UIDisplayNameTextField *)textField {
-    if ( ! [textField.activity.name containsString:@"Block"]) return NO;
+
+/**
+ * text field manipulations
+*/
+// Moving current text field above keyboard
+- (void) textFieldDidBeginEditing:(UITextField*)textField{
     textField.borderStyle = UITextBorderStyleRoundedRect;
-    CGRect bounds = [textField bounds];
-    RootViewController *rootViewController = (RootViewController *)[[[UIApplication sharedApplication].delegate window] rootViewController];
-    UIScrollView *scrollView = rootViewController.scrollView;
-    scrollView.pagingEnabled = NO;
-    rootViewController.verticalScrollingEnabled = YES;
-    [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, 300) animated:YES];
-    return YES;
 }
 - (BOOL)textFieldShouldEndEditing:(UIDisplayNameTextField *)textField {
     textField.borderStyle = UITextBorderStyleNone;
-    [CustomBlockNames setName:textField.activity.name withValue:textField.text];
-    // reload the schedule with new display name
-    [WeeklySchedule initialize];
-    RootViewController *rootViewController = (RootViewController *)[[[UIApplication sharedApplication].delegate window] rootViewController];
-    UIScrollView *scrollView = rootViewController.scrollView;
-    [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, 0) animated:YES];
-        scrollView.pagingEnabled = YES;
-    rootViewController.verticalScrollingEnabled = NO;
 
+    // save the customized block name for the activity (stored as property in textField
+    [CustomBlockNames setName:textField.activity.name withValue:textField.text];
+
+    // reload entire the schedule with new display name for block
+    [WeeklySchedule initialize];
     return YES;
 }
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
     return YES;
 }
-- (void)keyboardWillChange:(NSNotification *)notification {
-    keyboardRect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
-    keyboardRect = [self.view convertRect:keyboardRect fromView:nil]; //this is it!
-    
+- (void) keyboardDidShow:(NSNotification*)aNotification{
+   NSDictionary* info = [aNotification userInfo];
+   CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    // find the active text field and move the frame down, so that field is visible
+    for(UIDisplayNameTextField *textField in activityLabels) {
+        if ([textField isFirstResponder]) {
+            CGRect viewFrame = self.view.frame;
+            CGRect textFieldRect = [self.view convertRect:textField.bounds fromView:textField];
+            CGRect viewRect = [self.view convertRect:self.view.bounds fromView:self.view];
+            CGFloat textFieldBottomLine = textFieldRect.origin.y + textFieldRect.size.height;
+            
+            CGFloat keyboardHeight = keyboardSize.height;
+            
+            BOOL isTextFieldHidden = textFieldBottomLine > (viewRect.size.height - keyboardHeight)? TRUE :FALSE;
+            if (isTextFieldHidden) {
+                animatedDistance = textFieldBottomLine - (viewRect.size.height - keyboardHeight) ;
+                viewFrame.origin.y -= animatedDistance;
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationBeginsFromCurrentState:YES];
+                [UIView setAnimationDuration:ANIMATION_DURATION];
+                [self.view setFrame:viewFrame];
+                [UIView commitAnimations];
+            }
+
+            break;
+        }
+    }
 }
 
+- (void)keyboardDidHide:(NSNotification*)aNotification{
+   // keyboard is dismissed, restore frame view to its  zero origin
+  CGRect viewFrame = self.view.frame;
+  if (viewFrame.origin.y != 0) {
+    viewFrame.origin.y = 0;
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationBeginsFromCurrentState:YES];
+    [UIView setAnimationDuration:ANIMATION_DURATION];
+    [self.view setFrame:viewFrame];
+    [UIView commitAnimations];
+  }
+}
+// dismiss keyboard when tap outside text fields
+- (IBAction)screenWasTapped:(UITapGestureRecognizer *)sender {
+    for(UIDisplayNameTextField *f in activityLabels)
+        if ([f isFirstResponder]) [f resignFirstResponder];
+}
 @end
