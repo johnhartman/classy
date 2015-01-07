@@ -11,6 +11,9 @@
 #import "Activity.h"
 #import "TimeSlot.h"
 #import "ClassyAppDelegate.h"
+#import "CustomBlockNames.h"
+#import "UIDisplayNameTextField.h"
+#import "RootViewController.h"
 
 @interface DailyScheduleViewController ()
 
@@ -19,6 +22,8 @@
 @implementation DailyScheduleViewController
 
 static NSArray* rows;
+NSMutableDictionary *textFieldToActivity;
+CGRect keyboardRect;
 
 - (void)initialize
 {
@@ -48,7 +53,16 @@ static NSArray* rows;
         currentWeekday = @"Monday";
     }
     
-    //
+    _activity1Label.delegate = self;
+    _activity2Label.delegate = self;
+    _activity3Label.delegate = self;
+    _activity4Label.delegate = self;
+    _activity5Label.delegate = self;
+    _activity6Label.delegate = self;
+    _activity7Label.delegate = self;
+    _activity8Label.delegate = self;
+    _activity9Label.delegate = self;
+    _activity10Label.delegate = self;
     
     [self updateWeekday:currentWeekday];
 }
@@ -66,7 +80,8 @@ static NSArray* rows;
 {
     [super viewDidLoad];
     [self initialize];
-    
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillChange:) name:UIKeyboardWillChangeFrameNotification object:nil];
 }
 
 
@@ -103,13 +118,14 @@ static NSArray* rows;
     NSArray* weekdaySchedule = [WeeklySchedule dailySchedule:weekday];
     
     NSEnumerator* enumerator = [weekdaySchedule objectEnumerator];
+    textFieldToActivity = [[NSMutableDictionary alloc] init];
     
     for (NSArray* row in rows)
     {
         Activity* activity = [enumerator nextObject];
         
-        UILabel* activityName = [row objectAtIndex:0];
-        activityName.text = activity.name;
+        UIDisplayNameTextField* activityDisplayName = [row objectAtIndex:0];
+        activityDisplayName.text = activity.displayName;
         UILabel* activityStartTime = [row objectAtIndex:1];
         UILabel* activityDash = [row objectAtIndex:2];
         UILabel* activityEndTime = [row objectAtIndex:3];
@@ -117,6 +133,8 @@ static NSArray* rows;
         // setting each row to be visible or hidden
         
         if (activity != NULL) {
+            //[textFieldToActivity setObject:activity.name forKey:activityDisplayName];
+            activityDisplayName.activity = activity;
             
             // turn the time into 00:00 form
             
@@ -142,13 +160,13 @@ static NSArray* rows;
             activityStartTime.text = startTime;
             activityEndTime.text = endTime;
             
-            activityName.hidden = FALSE;
+            activityDisplayName.hidden = FALSE;
             activityStartTime.hidden = FALSE;
             activityDash.hidden = FALSE;
             activityEndTime.hidden = FALSE;
         }
         else {
-            activityName.hidden = TRUE;
+            activityDisplayName.hidden = TRUE;
             activityStartTime.hidden = TRUE;
             activityDash.hidden = TRUE;
             activityEndTime.hidden = TRUE;
@@ -177,22 +195,43 @@ static NSArray* rows;
     [self updateWeekday:@"Friday"];
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (BOOL)textFieldShouldBeginEditing:(UIDisplayNameTextField *)textField {
+    if ( ! [textField.activity.name containsString:@"Block"]) return NO;
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+    CGRect bounds = [textField bounds];
+    RootViewController *rootViewController = (RootViewController *)[[[UIApplication sharedApplication].delegate window] rootViewController];
+    UIScrollView *scrollView = rootViewController.scrollView;
+    scrollView.pagingEnabled = NO;
+    rootViewController.verticalScrollingEnabled = YES;
+    [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, 300) animated:YES];
+    return YES;
+}
+- (BOOL)textFieldShouldEndEditing:(UIDisplayNameTextField *)textField {
+    textField.borderStyle = UITextBorderStyleNone;
+    [CustomBlockNames setName:textField.activity.name withValue:textField.text];
+    // reload the schedule with new display name
+    [WeeklySchedule initialize];
+    RootViewController *rootViewController = (RootViewController *)[[[UIApplication sharedApplication].delegate window] rootViewController];
+    UIScrollView *scrollView = rootViewController.scrollView;
+    [scrollView setContentOffset:CGPointMake(scrollView.contentOffset.x, 0) animated:YES];
+        scrollView.pagingEnabled = YES;
+    rootViewController.verticalScrollingEnabled = NO;
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+    return YES;
+}
+-(BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+- (void)keyboardWillChange:(NSNotification *)notification {
+    keyboardRect = [notification.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue];
+    keyboardRect = [self.view convertRect:keyboardRect fromView:nil]; //this is it!
+    
+}
 
 @end

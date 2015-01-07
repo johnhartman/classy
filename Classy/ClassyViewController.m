@@ -136,7 +136,7 @@
     
     if (nextActivity) {
         [self toggleNextActivityLabelVisible:YES];
-        nextActivityLabel.text = nextActivity.name;
+        nextActivityLabel.text = nextActivity.displayName;
     } else {
         [self toggleNextActivityLabelVisible:NO];
     }
@@ -189,7 +189,7 @@
         
         // update current activity label
         
-        currentActivityLabel.text = currentActivity.name;
+        currentActivityLabel.text = currentActivity.displayName;
         countdownLabel.textColor = [UIColor blackColor];
         
         progressView.hidden = false;

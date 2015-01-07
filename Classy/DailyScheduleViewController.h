@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIDisplayNameTextField.h"
 
-@interface DailyScheduleViewController : UIViewController
+@interface DailyScheduleViewController : UIViewController <UITextFieldDelegate>
 
 // DAY SELECTION BUTTONS
 -   (IBAction) handleMondayButton:(id)sender;
@@ -25,34 +26,35 @@
 @property IBOutlet UIButton* fridayButton;
 
 // ACTIVITY LABELS
-@property IBOutlet UILabel* activity1Label;
+//@property IBOutlet UILabel* activity1Label;
+@property (strong, nonatomic) IBOutlet UIDisplayNameTextField *activity1Label;
 @property IBOutlet UILabel* activity1StartTime;
 @property IBOutlet UILabel* activity1EndTime;
-@property IBOutlet UILabel* activity2Label;
+@property (strong, nonatomic) IBOutlet UIDisplayNameTextField* activity2Label;
 @property IBOutlet UILabel* activity2StartTime;
 @property IBOutlet UILabel* activity2EndTime;
-@property IBOutlet UILabel* activity3Label;
+@property (strong, nonatomic) IBOutlet UIDisplayNameTextField* activity3Label;
 @property IBOutlet UILabel* activity3StartTime;
 @property IBOutlet UILabel* activity3EndTime;
-@property IBOutlet UILabel* activity4Label;
+@property (strong, nonatomic) IBOutlet UIDisplayNameTextField* activity4Label;
 @property IBOutlet UILabel* activity4StartTime;
 @property IBOutlet UILabel* activity4EndTime;
-@property IBOutlet UILabel* activity5Label;
+@property (strong, nonatomic) IBOutlet UIDisplayNameTextField* activity5Label;
 @property IBOutlet UILabel* activity5StartTime;
 @property IBOutlet UILabel* activity5EndTime;
-@property IBOutlet UILabel* activity6Label;
+@property (strong, nonatomic) IBOutlet UIDisplayNameTextField* activity6Label;
 @property IBOutlet UILabel* activity6StartTime;
 @property IBOutlet UILabel* activity6EndTime;
-@property IBOutlet UILabel* activity7Label;
+@property (strong, nonatomic) IBOutlet UIDisplayNameTextField* activity7Label;
 @property IBOutlet UILabel* activity7StartTime;
 @property IBOutlet UILabel* activity7EndTime;
-@property IBOutlet UILabel* activity8Label;
+@property (strong, nonatomic) IBOutlet UIDisplayNameTextField* activity8Label;
 @property IBOutlet UILabel* activity8StartTime;
 @property IBOutlet UILabel* activity8EndTime;
-@property IBOutlet UILabel* activity9Label;
+@property (strong, nonatomic) IBOutlet UIDisplayNameTextField* activity9Label;
 @property IBOutlet UILabel* activity9StartTime;
 @property IBOutlet UILabel* activity9EndTime;
-@property IBOutlet UILabel* activity10Label;
+@property (strong, nonatomic) IBOutlet UIDisplayNameTextField* activity10Label;
 @property IBOutlet UILabel* activity10StartTime;
 @property IBOutlet UILabel* activity10EndTime;
 

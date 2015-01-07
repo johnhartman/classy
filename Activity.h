@@ -11,11 +11,12 @@
 @interface Activity : NSObject
 
 @property NSString *name;
+@property NSMutableString *displayName;
 @property NSString *color;
 @property NSMutableSet *timeSlots;
 
 - (id) initWithName:(NSString*)name
-          withColor:(NSString*)color
-      withTimeSlots:(NSMutableSet*)timeSlots;
-
+    withDisplayName: (NSString *) displayName
+    withColor:(NSString*)color
+    withTimeSlots:(NSMutableSet*)timeSlots;
 @end

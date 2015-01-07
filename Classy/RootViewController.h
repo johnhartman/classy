@@ -5,5 +5,6 @@
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 @property (strong, nonatomic) IBOutlet UIView *view;
 @property (strong, nonatomic) NSArray *viewControllers;
+@property BOOL verticalScrollingEnabled;
 - (IBAction)changePage:(id)sender;
 @end

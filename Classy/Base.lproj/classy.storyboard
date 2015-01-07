@@ -198,37 +198,12 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="First Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q5-ai-nXg">
-                                <rect key="frame" x="28" y="81" width="150" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="pOy-Vq-HMT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WLe-Gs-4Pb">
                                 <rect key="frame" x="166" y="113" width="55" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Second Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISy-gH-7vt">
-                                <rect key="frame" x="28" y="113" width="150" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="lFG-Hb-Yhg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qma-TV-BHQ">
                                 <rect key="frame" x="166" y="145" width="55" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Third Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jlr-kU-Ggm">
-                                <rect key="frame" x="28" y="145" width="150" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="3od-KW-1Gt"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -237,24 +212,8 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Fourth Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKR-Jf-6TI">
-                                <rect key="frame" x="28" y="177" width="150" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="8Hu-tO-gEV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AG7-dA-pI0">
                                 <rect key="frame" x="166" y="209" width="55" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Fifth Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pzi-q5-caS">
-                                <rect key="frame" x="28" y="209" width="150" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="niF-Nf-zk2"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -263,24 +222,8 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Sixth Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pX3-iv-UuR">
-                                <rect key="frame" x="28" y="241" width="150" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="1bx-AH-WH4"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWi-CO-UxX">
                                 <rect key="frame" x="166" y="273" width="55" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Seventh Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oT5-JC-RbS">
-                                <rect key="frame" x="28" y="273" width="150" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="cYP-A6-Zt3"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -289,37 +232,13 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Eighth Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xQ-iA-TBi">
-                                <rect key="frame" x="28" y="305" width="150" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="MC7-S4-rsg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMp-Xt-vsZ">
                                 <rect key="frame" x="166" y="337" width="55" height="24"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Ninth Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LzV-TN-AmX">
-                                <rect key="frame" x="28" y="337" width="150" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="wRa-ad-sxn"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGR-y3-Umy">
                                 <rect key="frame" x="166" y="369" width="55" height="24"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Tenth Activity" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srn-K2-ru5">
-                                <rect key="frame" x="28" y="369" width="150" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="6sU-HC-cY2"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -429,49 +348,99 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhJ-Au-jrF" customClass="UIDisplayNameTextField">
+                                <rect key="frame" x="27" y="78" width="148" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Second Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aFI-Dt-HLA" customClass="UIDisplayNameTextField">
+                                <rect key="frame" x="27" y="110" width="147" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fifth Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="axR-ah-RqJ" customClass="UIDisplayNameTextField">
+                                <rect key="frame" x="27" y="206" width="147" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Sixth Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="13S-4c-vN1" customClass="UIDisplayNameTextField">
+                                <rect key="frame" x="27" y="238" width="147" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Seventh Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Gwg-HR-9pb" customClass="UIDisplayNameTextField">
+                                <rect key="frame" x="27" y="269" width="147" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Eigth Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UH7-XJ-INC" customClass="UIDisplayNameTextField">
+                                <rect key="frame" x="27" y="302" width="147" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Ninth Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3vK-bX-R1v" customClass="UIDisplayNameTextField">
+                                <rect key="frame" x="27" y="334" width="147" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tenth Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b5k-H9-s0h" customClass="UIDisplayNameTextField">
+                                <rect key="frame" x="27" y="366" width="147" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Fourth Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E2X-il-SBG" customClass="UIDisplayNameTextField">
+                                <rect key="frame" x="27" y="174" width="147" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Third Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8su-xk-DBN" customClass="UIDisplayNameTextField">
+                                <rect key="frame" x="27" y="142" width="147" height="30"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="activity10Dash" destination="omj-MF-1jN" id="FdP-81-stL"/>
                         <outlet property="activity10EndTime" destination="mVb-Se-nGE" id="Un4-yt-UAx"/>
-                        <outlet property="activity10Label" destination="srn-K2-ru5" id="oER-Ip-aa7"/>
+                        <outlet property="activity10Label" destination="b5k-H9-s0h" id="WFh-8v-NtG"/>
                         <outlet property="activity10StartTime" destination="NGR-y3-Umy" id="gSh-PR-hNa"/>
                         <outlet property="activity1Dash" destination="2Yy-Gl-39V" id="eTL-QD-n66"/>
                         <outlet property="activity1EndTime" destination="PBf-bU-7uX" id="lU0-wl-1Dr"/>
-                        <outlet property="activity1Label" destination="3Q5-ai-nXg" id="KJ3-6H-ahJ"/>
+                        <outlet property="activity1Label" destination="yhJ-Au-jrF" id="ihq-Yk-POJ"/>
                         <outlet property="activity1StartTime" destination="7DE-05-aTx" id="nrT-B0-DGk"/>
                         <outlet property="activity2Dash" destination="OgZ-52-VyC" id="yKo-RT-BrA"/>
                         <outlet property="activity2EndTime" destination="Qoj-dg-n9j" id="MFZ-m2-GyC"/>
-                        <outlet property="activity2Label" destination="ISy-gH-7vt" id="1Ej-Zh-Dh8"/>
+                        <outlet property="activity2Label" destination="aFI-Dt-HLA" id="9k9-FP-AXe"/>
                         <outlet property="activity2StartTime" destination="WLe-Gs-4Pb" id="I0D-Wn-wBe"/>
                         <outlet property="activity3Dash" destination="iDw-XN-oc0" id="NuF-8a-8h9"/>
                         <outlet property="activity3EndTime" destination="faM-4V-is4" id="FTO-t4-Q4z"/>
-                        <outlet property="activity3Label" destination="jlr-kU-Ggm" id="crj-B9-aBU"/>
+                        <outlet property="activity3Label" destination="8su-xk-DBN" id="ZrS-cx-cmV"/>
                         <outlet property="activity3StartTime" destination="qma-TV-BHQ" id="eP6-gf-wnV"/>
                         <outlet property="activity4Dash" destination="ojT-Rb-d3q" id="qfZ-Uu-xhp"/>
                         <outlet property="activity4EndTime" destination="kZC-5A-Rdy" id="bZw-uK-wp5"/>
-                        <outlet property="activity4Label" destination="UKR-Jf-6TI" id="ZWL-R7-5YU"/>
+                        <outlet property="activity4Label" destination="E2X-il-SBG" id="gCv-ke-SOV"/>
                         <outlet property="activity4StartTime" destination="8S2-IR-6Kp" id="PAg-oE-XmX"/>
                         <outlet property="activity5Dash" destination="OG8-ab-ONO" id="A84-xV-cEA"/>
                         <outlet property="activity5EndTime" destination="Oqe-jf-TnE" id="Jqp-gC-40R"/>
-                        <outlet property="activity5Label" destination="pzi-q5-caS" id="bD1-D9-iln"/>
+                        <outlet property="activity5Label" destination="axR-ah-RqJ" id="zUp-Yd-Mg8"/>
                         <outlet property="activity5StartTime" destination="AG7-dA-pI0" id="qbh-mx-dea"/>
                         <outlet property="activity6Dash" destination="0Dn-6U-Clo" id="Qzh-n1-JbG"/>
                         <outlet property="activity6EndTime" destination="BBf-21-2yL" id="weh-iQ-uts"/>
-                        <outlet property="activity6Label" destination="pX3-iv-UuR" id="RX1-7K-CPr"/>
+                        <outlet property="activity6Label" destination="13S-4c-vN1" id="k2Z-UI-HCb"/>
                         <outlet property="activity6StartTime" destination="ozs-o1-Km5" id="mU5-Zg-tc5"/>
                         <outlet property="activity7Dash" destination="seH-Je-L71" id="Vcz-bA-UXO"/>
                         <outlet property="activity7EndTime" destination="axp-CP-rkj" id="fta-Mr-JvM"/>
-                        <outlet property="activity7Label" destination="oT5-JC-RbS" id="cHs-UU-vbE"/>
+                        <outlet property="activity7Label" destination="Gwg-HR-9pb" id="QHv-xE-bsm"/>
                         <outlet property="activity7StartTime" destination="SWi-CO-UxX" id="DRI-G2-wPF"/>
                         <outlet property="activity8Dash" destination="KjI-ck-EkY" id="ba9-Df-TXD"/>
                         <outlet property="activity8EndTime" destination="0qg-Re-Rjq" id="di1-wb-2Hj"/>
-                        <outlet property="activity8Label" destination="4xQ-iA-TBi" id="dtU-xw-ICI"/>
+                        <outlet property="activity8Label" destination="UH7-XJ-INC" id="kBr-oK-vV3"/>
                         <outlet property="activity8StartTime" destination="ccq-VN-BGy" id="uDB-Qa-Y3L"/>
                         <outlet property="activity9Dash" destination="hfa-mj-fjR" id="6dZ-EE-Irk"/>
                         <outlet property="activity9EndTime" destination="U5U-9b-BkR" id="2Hk-dd-nEz"/>
-                        <outlet property="activity9Label" destination="LzV-TN-AmX" id="rHv-wf-QvE"/>
+                        <outlet property="activity9Label" destination="3vK-bX-R1v" id="Gc9-qe-4Jv"/>
                         <outlet property="activity9StartTime" destination="sMp-Xt-vsZ" id="87R-RO-15I"/>
                         <outlet property="fridayButton" destination="7iT-hg-H24" id="2PU-KN-U4L"/>
                         <outlet property="mondayButton" destination="oF5-g2-g8z" id="XtH-ar-8KI"/>
