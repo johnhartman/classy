@@ -14,8 +14,6 @@
 
 @interface ClassyViewController ()
 
-@property (nonatomic, strong) UIProgressView *progressView;
-
 - (void)toggleNextActivityLabelVisible:(BOOL)visible;
 
 @end
