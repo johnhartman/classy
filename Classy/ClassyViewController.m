@@ -14,8 +14,6 @@
 
 @interface ClassyViewController ()
 
-@property (nonatomic, strong) UIProgressView *progressView;
-
 - (void)toggleNextActivityLabelVisible:(BOOL)visible;
 
 @end
@@ -28,11 +26,11 @@
 	
     [self setTimer];
     
-    self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
+    //self._progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
     
-    self.progressView.center = self.view.center;
+    //self._progressView.center = self.view.center;
     [self timerRun];
-    [self.view addSubview:self.progressView];
+    //[self.view addSubview:self._progressView];
 }
 
 // COUNTDOWN CODE
@@ -44,7 +42,7 @@
         currentActivityLabel.hidden = NO;
         nextActivityLabel.hidden = NO;
         nextActivityStartTimeLabel.hidden = NO;
-        self.progressView.hidden = NO;
+        progressView.hidden = NO;
     }
     else {
         notInSessionLabel.hidden = NO;
@@ -52,7 +50,7 @@
         currentActivityLabel.hidden = YES;
         nextActivityLabel.hidden = YES;
         nextActivityStartTimeLabel.hidden = YES;
-        self.progressView.hidden = YES;
+        progressView.hidden = YES;
         return;
     }
     // get the weekday schedule (copy/move from viewDidLoad above)
@@ -185,7 +183,7 @@
         hours = 0;
         minutes = totalSecondsLeftInPassing / 60;
         seconds = totalSecondsLeftInPassing % 60;
-        _progressView.hidden = true;
+        progressView.hidden = true;
     }
     else {
         
@@ -194,9 +192,9 @@
         currentActivityLabel.text = currentActivity.name;
         countdownLabel.textColor = [UIColor blackColor];
         
-        _progressView.hidden = false;
+        progressView.hidden = false;
         float progressNumber = (float)(secondsSinceMidnight - intStartMinutes*60)/(intDuration*60);
-        _progressView.progress = progressNumber;
+        progressView.progress = progressNumber;
         
         hours = secondsLeftInActivity/3600;
         minutes = (secondsLeftInActivity%3600) / 60;

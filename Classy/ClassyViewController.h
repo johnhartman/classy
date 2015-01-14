@@ -12,6 +12,7 @@
     
     IBOutlet UILabel* countdownLabel;
     IBOutlet UILabel* currentActivityLabel;
+    IBOutlet UIProgressView *progressView;
     IBOutlet UILabel* nextActivityLabel;
     IBOutlet UILabel* nextActivityStartTimeLabel;
     

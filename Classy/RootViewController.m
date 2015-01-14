@@ -18,7 +18,7 @@
     [self addChildViewController:classyViewController];
     [self.scrollView addSubview:classyViewController.view];
     [classyViewController didMoveToParentViewController:self];
-        
+    
     scrollFrame.origin.x = CGRectGetWidth(scrollFrame);
     dailyViewController.view.frame = scrollFrame;
     [self addChildViewController:dailyViewController];
@@ -55,6 +55,11 @@
     bounds.origin.x = CGRectGetWidth(bounds) * page;
     bounds.origin.y = 0;
     [self.scrollView scrollRectToVisible:bounds animated:animated];
+}
+// disable vertical scrolling
+- (void)scrollViewDidScroll:(UIScrollView *) scrollView
+{
+    [scrollView setContentOffset: CGPointMake(scrollView.contentOffset.x, 0)];
 }
 
 - (IBAction)changePage:(id)sender
