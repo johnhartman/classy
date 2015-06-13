@@ -11,10 +11,12 @@
 @implementation Activity
 
 - (id) initWithName:(NSString*)name
-          withColor:(NSString*)color
-      withTimeSlots:(NSMutableSet*)timeSlots {
+    withDisplayName: (NSString *) displayName
+    withColor:(NSString*)color
+    withTimeSlots:(NSMutableSet*)timeSlots {
     
     self.name = name;
+    self.displayName = [[NSMutableString alloc] initWithString:displayName];
     self.color = color;
     self.timeSlots = timeSlots;
     

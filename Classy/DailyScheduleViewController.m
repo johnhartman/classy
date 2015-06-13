@@ -11,14 +11,22 @@
 #import "Activity.h"
 #import "TimeSlot.h"
 #import "ClassyAppDelegate.h"
+#import "CustomBlockNames.h"
+#import "UIDisplayNameTextField.h"
+#import "RootViewController.h"
 
 @interface DailyScheduleViewController ()
-
+- (void) resignTextFieldFirstResponder;
 @end
 
 @implementation DailyScheduleViewController
 
 static NSArray* rows;
+NSMutableDictionary *textFieldToActivity;
+static const CGFloat ANIMATION_DURATION = 0.4;
+static const CGFloat LITTLE_SPACE = 5;
+CGFloat animatedDistance;
+NSArray *activityLabels;
 
 - (void)initialize
 {
@@ -41,14 +49,16 @@ static NSArray* rows;
     NSDateFormatter* theDateFormatter = [[NSDateFormatter alloc] init];
     [theDateFormatter setFormatterBehavior:NSDateFormatterBehavior10_4];
     [theDateFormatter setDateFormat:@"EEEE"];
-  
+    
     NSString *currentWeekday =  [theDateFormatter stringFromDate:currentTime];
-   
+    
     if ([currentWeekday isEqualToString:@"Sunday"] || [currentWeekday isEqualToString:@"Saturday"]) {
         currentWeekday = @"Monday";
     }
     
-    //
+    activityLabels = [[NSArray alloc] initWithObjects:_activity1Label,_activity2Label,_activity3Label,_activity4Label,_activity5Label,_activity6Label,_activity7Label,_activity8Label,_activity9Label,_activity10Label,nil];
+    
+    for(UIDisplayNameTextField *f in activityLabels) f.delegate = self;
     
     [self updateWeekday:currentWeekday];
 }
@@ -67,13 +77,22 @@ static NSArray* rows;
     [super viewDidLoad];
     [self initialize];
     
+    // add tap gesture to help in dismissing keyboard
+    UITapGestureRecognizer * tapGesture = [[UITapGestureRecognizer alloc]
+                                           initWithTarget:self
+                                           action:@selector(screenWasTapped:)];// outside textfields
+    
+    [self.view addGestureRecognizer:tapGesture];
+    
+    // add keyboard notification
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardDidHide:) name:UIKeyboardDidHideNotification object:nil];
 }
-
 
 - (void)updateWeekday:(NSString*) weekday {
     
     // set only the current weekday's button to blue, set the rest to gray
-  
+    
     UIColor* highlightColor = [ClassyAppDelegate getHighlightColor];
     
     [self.mondayButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
@@ -97,19 +116,18 @@ static NSArray* rows;
     if ([weekday isEqualToString:@"Friday"]) {
         [self.fridayButton setTitleColor:highlightColor forState:UIControlStateNormal];
     }
-
-    //
     
     NSArray* weekdaySchedule = [WeeklySchedule dailySchedule:weekday];
     
     NSEnumerator* enumerator = [weekdaySchedule objectEnumerator];
+    textFieldToActivity = [[NSMutableDictionary alloc] init];
     
     for (NSArray* row in rows)
     {
         Activity* activity = [enumerator nextObject];
         
-        UILabel* activityName = [row objectAtIndex:0];
-        activityName.text = activity.name;
+        UIDisplayNameTextField* activityDisplayName = [row objectAtIndex:0];
+        activityDisplayName.text = activity.displayName;
         UILabel* activityStartTime = [row objectAtIndex:1];
         UILabel* activityDash = [row objectAtIndex:2];
         UILabel* activityEndTime = [row objectAtIndex:3];
@@ -117,6 +135,8 @@ static NSArray* rows;
         // setting each row to be visible or hidden
         
         if (activity != NULL) {
+            //[textFieldToActivity setObject:activity.name forKey:activityDisplayName];
+            activityDisplayName.activity = activity;
             
             // turn the time into 00:00 form
             
@@ -142,13 +162,13 @@ static NSArray* rows;
             activityStartTime.text = startTime;
             activityEndTime.text = endTime;
             
-            activityName.hidden = FALSE;
+            activityDisplayName.hidden = FALSE;
             activityStartTime.hidden = FALSE;
             activityDash.hidden = FALSE;
             activityEndTime.hidden = FALSE;
         }
         else {
-            activityName.hidden = TRUE;
+            activityDisplayName.hidden = TRUE;
             activityStartTime.hidden = TRUE;
             activityDash.hidden = TRUE;
             activityEndTime.hidden = TRUE;
@@ -177,22 +197,99 @@ static NSArray* rows;
     [self updateWeekday:@"Friday"];
 }
 
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
+/**
+ * text field manipulations so that it's displayed above keyboard
  */
+- (void) textFieldDidBeginEditing:(UITextField*)textField{
+    textField.borderStyle = UITextBorderStyleRoundedRect;
+}
+- (BOOL) textFieldShouldBeginEditing:(UIDisplayNameTextField *)textField {
+    // only allow 'block activities to be customized
+    if ( ! [textField.activity.name containsString:@"Block"] ) {
+        [self resignTextFieldFirstResponder];
+        return NO;
+    }
+    
+    textField.layer.borderColor = [ClassyAppDelegate getHighlightColor].CGColor;
+    textField.layer.borderWidth = 1;
+    textField.layer.cornerRadius = 5;
+    return YES;
+}
+- (BOOL)textFieldShouldEndEditing:(UIDisplayNameTextField *)textField {
+    textField.layer.borderWidth = 0;
+    textField.layer.borderColor = [ClassyAppDelegate getHighlightColor].CGColor;
+    [textField setBorderStyle:UITextBorderStyleNone];
+    
+    NSString *newDisplayName = [[NSString alloc] initWithString:textField.text];
+    newDisplayName = [newDisplayName stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    
+    // Do not allow empty names
+    if (newDisplayName.length == 0) return NO;
+    
+    // save the customized block name for the activity (stored as property in textField
+    [CustomBlockNames setName:textField.activity.name withValue:newDisplayName];
+    
+    // reload entire the schedule with new display name for block
+    [WeeklySchedule initialize];
+    return YES;
+}
+- (BOOL) textFieldShouldReturn:(UITextField *)textField{
+    [textField resignFirstResponder];
+    return YES;
+}
+- (void) keyboardDidShow:(NSNotification*)aNotification{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    // find the active text field and move the frame down, so that field is visible
+    for(UIDisplayNameTextField *textField in activityLabels) {
+        if ([textField isFirstResponder]) {
+            CGRect viewFrame = self.view.frame;
+            CGRect textFieldRect = [self.view convertRect:textField.bounds fromView:textField];
+            CGRect viewRect = [self.view convertRect:self.view.bounds fromView:self.view];
+            CGFloat textFieldBottomLine = textFieldRect.origin.y + textFieldRect.size.height;
+            
+            CGFloat keyboardHeight = keyboardSize.height;
+            
+            BOOL isTextFieldHidden = textFieldBottomLine > (viewRect.size.height - keyboardHeight)? TRUE :FALSE;
+            if (isTextFieldHidden) {
+                animatedDistance = textFieldBottomLine - (viewRect.size.height - keyboardHeight) ;
+                viewFrame.origin.y -= animatedDistance;
+                [UIView beginAnimations:nil context:NULL];
+                [UIView setAnimationBeginsFromCurrentState:YES];
+                [UIView setAnimationDuration:ANIMATION_DURATION];
+                [self.view setFrame:viewFrame];
+                [UIView commitAnimations];
+            }
+            
+            break;
+        }
+    }
+}
 
+- (void)keyboardDidHide:(NSNotification*)aNotification{
+    // keyboard is dismissed, restore frame view to its  zero origin
+    CGRect viewFrame = self.view.frame;
+    if (viewFrame.origin.y != 0) {
+        viewFrame.origin.y = 0;
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationBeginsFromCurrentState:YES];
+        [UIView setAnimationDuration:ANIMATION_DURATION];
+        [self.view setFrame:viewFrame];
+        [UIView commitAnimations];
+    }
+}
+// dismiss keyboard when tap outside text fields
+- (IBAction)screenWasTapped:(UITapGestureRecognizer *)sender {
+    [self resignTextFieldFirstResponder];
+}
+- (void) resignTextFieldFirstResponder {
+    for(UIDisplayNameTextField *f in activityLabels)
+        if ([f isFirstResponder]) [f resignFirstResponder];
+}
 @end

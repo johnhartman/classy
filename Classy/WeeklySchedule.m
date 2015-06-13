@@ -9,6 +9,7 @@
 #import "WeeklySchedule.h"
 #import "TimeSlot.h"
 #import "Activity.h"
+#import "CustomBlockNames.h"
 
 @implementation WeeklySchedule
 
@@ -33,7 +34,7 @@ static NSMutableSet* weeklySchedule;
         NSUInteger count = [weekdayTimeslots count];
         
         if (count != 0) {
-        Activity* weekdayActivity = [[Activity alloc] initWithName:a.name withColor:a.color withTimeSlots:weekdayTimeslots];
+            Activity* weekdayActivity = [[Activity alloc] initWithName:a.name withDisplayName:a.displayName withColor:a.color withTimeSlots:weekdayTimeslots];
             [weekdaySchedule addObject:weekdayActivity];
             
         }
@@ -195,21 +196,24 @@ static NSMutableSet* weeklySchedule;
     NSMutableSet* PracticumTimeSlots = [[NSMutableSet alloc] initWithObjects:PracticumThursday, nil];
     NSMutableSet* AssemblyTimeSlots = [[NSMutableSet alloc] initWithObjects:AssemblyFriday, nil];
     
+    // CREATE CUSTOM ACTIVITY NAMES
+
+    
     // CREATE ACTIVITY
     
-    Activity* ABlock = [[Activity alloc] initWithName:@"A Block" withColor:@"Red" withTimeSlots:ABlockTimeSlots];
-    Activity* BBlock = [[Activity alloc] initWithName:@"B Block" withColor:@"Purple" withTimeSlots:BBlockTimeSlots];
-    Activity* CBlock = [[Activity alloc] initWithName:@"C Block" withColor:@"DarkBlue" withTimeSlots:CBlockTimeSlots];
-    Activity* DBlock = [[Activity alloc] initWithName:@"D Block" withColor:@"Orange" withTimeSlots:DBlockTimeSlots];
-    Activity* EBlock = [[Activity alloc] initWithName:@"E Block" withColor:@"Pink" withTimeSlots:EBlockTimeSlots];
-    Activity* FBlock = [[Activity alloc] initWithName:@"F Block" withColor:@"Green" withTimeSlots:FBlockTimeSlots];
-    Activity* GBlock = [[Activity alloc] initWithName:@"G Block" withColor:@"LightBlue" withTimeSlots:GBlockTimeSlots];
-    Activity* MorningMeeting = [[Activity alloc] initWithName:@"Morning Meeting" withColor:@"Gray" withTimeSlots:MorningMeetingTimeSlots];
-    Activity* Break = [[Activity alloc] initWithName:@"Break" withColor:@"Gray" withTimeSlots:BreakTimeSlots];
-    Activity* Lunch = [[Activity alloc] initWithName:@"Lunch" withColor:@"Gray" withTimeSlots:LunchTimeSlots];
-    Activity* Advising = [[Activity alloc] initWithName:@"Advising" withColor:@"Gray" withTimeSlots:AdvisingTimeSlots];
-    Activity* Practicum = [[Activity alloc] initWithName:@"Practicum" withColor:@"Gray" withTimeSlots:PracticumTimeSlots];
-    Activity* Assembly = [[Activity alloc] initWithName:@"Assembly" withColor:@"Gray" withTimeSlots:AssemblyTimeSlots];
+    Activity* ABlock = [[Activity alloc] initWithName:@"A Block" withDisplayName:([CustomBlockNames getName:@"A Block"] ? : @"A Block") withColor:@"Red" withTimeSlots:ABlockTimeSlots];
+    Activity* BBlock = [[Activity alloc] initWithName:@"B Block" withDisplayName:([CustomBlockNames getName:@"B Block"] ? : @"B Block") withColor:@"Purple" withTimeSlots:BBlockTimeSlots];
+    Activity* CBlock = [[Activity alloc] initWithName:@"C Block" withDisplayName:([CustomBlockNames getName:@"C Block"] ? : @"C Block") withColor:@"DarkBlue" withTimeSlots:CBlockTimeSlots];
+    Activity* DBlock = [[Activity alloc] initWithName:@"D Block" withDisplayName:([CustomBlockNames getName:@"D Block"] ? : @"D Block") withColor:@"Orange" withTimeSlots:DBlockTimeSlots];
+    Activity* EBlock = [[Activity alloc] initWithName:@"E Block" withDisplayName:([CustomBlockNames getName:@"E Block"] ? : @"E Block") withColor:@"Pink" withTimeSlots:EBlockTimeSlots];
+    Activity* FBlock = [[Activity alloc] initWithName:@"F Block" withDisplayName:([CustomBlockNames getName:@"F Block"] ? : @"F Block") withColor:@"Green" withTimeSlots:FBlockTimeSlots];
+    Activity* GBlock = [[Activity alloc] initWithName:@"G Block" withDisplayName:([CustomBlockNames getName:@"G Block"] ? : @"G Block") withColor:@"LightBlue" withTimeSlots:GBlockTimeSlots];
+    Activity* MorningMeeting = [[Activity alloc] initWithName:@"MorningMeeting" withDisplayName:@"Morning Meeting" withColor:@"Gray" withTimeSlots:MorningMeetingTimeSlots];
+    Activity* Break = [[Activity alloc] initWithName:@"Break" withDisplayName:@"Break" withColor:@"Gray" withTimeSlots:BreakTimeSlots];
+    Activity* Lunch = [[Activity alloc] initWithName:@"Lunch" withDisplayName:@"Lunch" withColor:@"Gray" withTimeSlots:LunchTimeSlots];
+    Activity* Advising = [[Activity alloc] initWithName:@"Advising" withDisplayName:@"Advising" withColor:@"Gray" withTimeSlots:AdvisingTimeSlots];
+    Activity* Practicum = [[Activity alloc] initWithName:@"Practicum" withDisplayName:@"Practicum" withColor:@"Gray" withTimeSlots:PracticumTimeSlots];
+    Activity* Assembly = [[Activity alloc] initWithName:@"Assembly" withDisplayName:@"Assembly" withColor:@"Gray" withTimeSlots:AssemblyTimeSlots];
     
     // CREATE MUTABLE SET "SCHEDULE"
     

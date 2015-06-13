@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		528138481A5B92E2009135DB /* CustomBlockNames.m in Sources */ = {isa = PBXBuildFile; fileRef = 528138471A5B92E2009135DB /* CustomBlockNames.m */; };
+		52C9D5C01A5BD57E00466FE8 /* UIDisplayNameTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 52C9D5BF1A5BD57E00466FE8 /* UIDisplayNameTextField.m */; };
 		52F729EA1A589C5E005A1F99 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F729E91A589C5E005A1F99 /* RootViewController.m */; };
 		AA75FAC918F7853300D4F1A1 /* WeeklySchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */; };
 		AAC854ED18F51B9600CD4709 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAC854EC18F51B9600CD4709 /* Foundation.framework */; };
@@ -39,6 +41,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		528138461A5B92E2009135DB /* CustomBlockNames.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBlockNames.h; sourceTree = "<group>"; };
+		528138471A5B92E2009135DB /* CustomBlockNames.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBlockNames.m; sourceTree = "<group>"; };
+		52C9D5BE1A5BD57E00466FE8 /* UIDisplayNameTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIDisplayNameTextField.h; sourceTree = "<group>"; };
+		52C9D5BF1A5BD57E00466FE8 /* UIDisplayNameTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIDisplayNameTextField.m; sourceTree = "<group>"; };
 		52F729E81A589C5E005A1F99 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		52F729E91A589C5E005A1F99 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		AA75FAC718F7853300D4F1A1 /* WeeklySchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeeklySchedule.h; sourceTree = "<group>"; };
@@ -127,22 +133,26 @@
 		AAC854F218F51B9600CD4709 /* Classy */ = {
 			isa = PBXGroup;
 			children = (
-				AAC854FE18F51B9600CD4709 /* classy.storyboard */,
-				52F729E81A589C5E005A1F99 /* RootViewController.h */,
-				52F729E91A589C5E005A1F99 /* RootViewController.m */,
-				AAC8552418F51C4200CD4709 /* TimeSlot.h */,
-				AAC8552518F51C4200CD4709 /* TimeSlot.m */,
 				AAC8552118F51BFC00CD4709 /* Activity.h */,
 				AAC8552218F51BFC00CD4709 /* Activity.m */,
-				AA75FAC718F7853300D4F1A1 /* WeeklySchedule.h */,
-				AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */,
+				AAC854FE18F51B9600CD4709 /* classy.storyboard */,
+				52C9D5BE1A5BD57E00466FE8 /* UIDisplayNameTextField.h */,
+				52C9D5BF1A5BD57E00466FE8 /* UIDisplayNameTextField.m */,
 				AAC854FB18F51B9600CD4709 /* ClassyAppDelegate.h */,
+				528138461A5B92E2009135DB /* CustomBlockNames.h */,
+				528138471A5B92E2009135DB /* CustomBlockNames.m */,
 				AAC854FC18F51B9600CD4709 /* ClassyAppDelegate.m */,
 				AAC8550118F51B9600CD4709 /* ClassyViewController.h */,
 				AAC8550218F51B9600CD4709 /* ClassyViewController.m */,
 				AAD7413B199EC71E00E5B048 /* DailyScheduleViewController.h */,
 				AAD7413C199EC71E00E5B048 /* DailyScheduleViewController.m */,
+				52F729E81A589C5E005A1F99 /* RootViewController.h */,
+				52F729E91A589C5E005A1F99 /* RootViewController.m */,
 				AAC854F318F51B9600CD4709 /* Supporting Files */,
+				AAC8552418F51C4200CD4709 /* TimeSlot.h */,
+				AAC8552518F51C4200CD4709 /* TimeSlot.m */,
+				AA75FAC718F7853300D4F1A1 /* WeeklySchedule.h */,
+				AA75FAC818F7853300D4F1A1 /* WeeklySchedule.m */,
 			);
 			path = Classy;
 			sourceTree = "<group>";
@@ -280,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAC8550318F51B9600CD4709 /* ClassyViewController.m in Sources */,
+				52C9D5C01A5BD57E00466FE8 /* UIDisplayNameTextField.m in Sources */,
 				AAC854F918F51B9600CD4709 /* main.m in Sources */,
 				AAC8552618F51C4200CD4709 /* TimeSlot.m in Sources */,
 				AA75FAC918F7853300D4F1A1 /* WeeklySchedule.m in Sources */,
@@ -287,6 +298,7 @@
 				AAC8552318F51BFC00CD4709 /* Activity.m in Sources */,
 				AAC854FD18F51B9600CD4709 /* ClassyAppDelegate.m in Sources */,
 				AAD7413D199EC71E00E5B048 /* DailyScheduleViewController.m in Sources */,
+				528138481A5B92E2009135DB /* CustomBlockNames.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
