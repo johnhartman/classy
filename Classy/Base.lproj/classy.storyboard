@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D131" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
         <!--Classy View Controller-->
@@ -348,7 +348,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="center" text="First Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhJ-Au-jrF" customClass="UIDisplayNameTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yhJ-Au-jrF" customClass="UIDisplayNameTextField">
                                 <rect key="frame" x="27" y="78" width="148" height="30"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
@@ -378,7 +378,7 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Eigth Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UH7-XJ-INC" customClass="UIDisplayNameTextField">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Eighth Activity" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UH7-XJ-INC" customClass="UIDisplayNameTextField">
                                 <rect key="frame" x="27" y="302" width="147" height="30"/>
                                 <color key="tintColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
@@ -408,6 +408,556 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pDM-Ea-wES">
+                                <rect key="frame" x="169" y="78" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="M">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="uPr-Sq-daI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZn-qb-DLd">
+                                <rect key="frame" x="194" y="78" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="MX1-TG-Mda"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Agv-Cm-uRU">
+                                <rect key="frame" x="219" y="78" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="W">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="DXU-9d-YFi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bcm-GR-bOx">
+                                <rect key="frame" x="244" y="78" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="cbb-rT-hnm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSe-iN-Nkl">
+                                <rect key="frame" x="269" y="78" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="F">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="2HK-d3-bXa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MbB-Qc-0D9">
+                                <rect key="frame" x="169" y="113" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="M">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="Nfq-EE-wMz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9nF-rP-mv4">
+                                <rect key="frame" x="194" y="113" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="BDi-UX-YlJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-cF-9Ly">
+                                <rect key="frame" x="219" y="113" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="W">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="zm7-vI-QEu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iQO-6S-q0f">
+                                <rect key="frame" x="244" y="113" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="lnU-BZ-Sxe"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVv-Xu-79l">
+                                <rect key="frame" x="269" y="113" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="F">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="qMj-pE-Wvu"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5K-Mq-VbJ">
+                                <rect key="frame" x="169" y="145" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="M">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="8nX-DG-T4a"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9pg-vY-C0R">
+                                <rect key="frame" x="194" y="145" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="ejZ-KX-ej0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNv-gK-DuT">
+                                <rect key="frame" x="219" y="145" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="W">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="uCZ-qb-V4e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xy2-7g-Kfp">
+                                <rect key="frame" x="244" y="145" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="YQr-5v-qYh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vD-mM-bfz">
+                                <rect key="frame" x="269" y="145" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="F">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="Uzg-PG-13q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haC-wY-KFa">
+                                <rect key="frame" x="169" y="177" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="M">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="0Ol-kp-bPG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCA-1t-XPe">
+                                <rect key="frame" x="194" y="177" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="rWM-VP-6Lc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ueE-vG-2sb">
+                                <rect key="frame" x="219" y="177" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="W">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="tE5-F0-Tvn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RME-dX-G0g">
+                                <rect key="frame" x="244" y="177" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="PZW-9K-jZ8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBs-ko-COh">
+                                <rect key="frame" x="269" y="177" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="F">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="gyf-wF-b5m"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vLq-NZ-TYR">
+                                <rect key="frame" x="169" y="209" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="M">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="XM6-CF-sAU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gyt-Wz-bMt">
+                                <rect key="frame" x="194" y="209" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="Kw3-9T-Kd3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiR-MZ-h15">
+                                <rect key="frame" x="219" y="209" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="W">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="XUL-nG-xtU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OO6-XX-qDm">
+                                <rect key="frame" x="244" y="209" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="mdP-WB-p3X"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Oe6-85-eni">
+                                <rect key="frame" x="269" y="209" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="F">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="CWc-FC-TrD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9V-kx-yFn">
+                                <rect key="frame" x="169" y="241" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="M">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="4Dk-pI-z55"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fAN-ct-3PD">
+                                <rect key="frame" x="194" y="241" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="61x-QH-g8b"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWg-EE-TWx">
+                                <rect key="frame" x="219" y="241" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="W">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="H98-wD-5Qn"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z1b-xD-yLa">
+                                <rect key="frame" x="244" y="241" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="ona-xr-ilL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4EH-GW-EnO">
+                                <rect key="frame" x="269" y="241" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="F">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="tdk-2x-qWJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mB3-jh-nJF">
+                                <rect key="frame" x="169" y="272" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="M">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="uqa-df-PfL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ar6-dj-7mW">
+                                <rect key="frame" x="194" y="272" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="bOt-p3-WRY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MVY-Ka-ieX">
+                                <rect key="frame" x="219" y="272" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="W">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="iEf-41-eRo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A0S-Pu-HRm">
+                                <rect key="frame" x="244" y="272" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="4hM-wZ-ZoM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGA-4b-UbM">
+                                <rect key="frame" x="269" y="272" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="F">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="WaR-wr-aSU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjO-gw-tCc">
+                                <rect key="frame" x="169" y="305" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="M">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="5Tg-Ck-sar"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JoD-CE-70B">
+                                <rect key="frame" x="194" y="305" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="60u-cc-hMJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ny-bw-2QN">
+                                <rect key="frame" x="219" y="305" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="W">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="mvV-8u-At8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V9x-rh-Gfd">
+                                <rect key="frame" x="244" y="305" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="n0d-Jr-UwK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajF-DG-0yg">
+                                <rect key="frame" x="269" y="305" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="F">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="yad-9o-IB5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38f-JV-CHA">
+                                <rect key="frame" x="169" y="337" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="M">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="fue-8S-Vmq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mt6-SS-32b">
+                                <rect key="frame" x="194" y="337" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="Z05-rR-w7Y"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w4Z-gO-3FT">
+                                <rect key="frame" x="219" y="337" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="W">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="RDv-t4-tKE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVV-5x-Zke">
+                                <rect key="frame" x="244" y="337" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="x0w-ev-Cec"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXe-PP-YHA">
+                                <rect key="frame" x="269" y="337" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="F">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="OHt-QN-PvR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iPe-uR-HE7">
+                                <rect key="frame" x="169" y="369" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="M">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleMondayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="AjD-s9-b6M"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bHA-OT-pUu">
+                                <rect key="frame" x="194" y="369" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="T">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleTuesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="2df-cv-moB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U1-5U-ODD">
+                                <rect key="frame" x="219" y="369" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="W">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleWednesdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="aMW-fp-2e7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVb-BM-FSE">
+                                <rect key="frame" x="244" y="369" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="Th">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleThursdayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="hau-Ju-Fiz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nTN-Pz-gon">
+                                <rect key="frame" x="269" y="369" width="23" height="23"/>
+                                <color key="backgroundColor" red="0.94499405569999995" green="0.94499405569999995" blue="0.94499405569999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <state key="normal" title="F">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="handleFridayButton:" destination="PRr-sE-XyW" eventType="touchUpInside" id="SZH-wM-M8N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>

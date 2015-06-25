@@ -23,7 +23,7 @@
 
 static NSArray* rows;
 NSMutableDictionary *textFieldToActivity;
-static const CGFloat ANIMATION_DURATION = 0.4;
+static const CGFloat ANIMATION_DURATION = 0.2;
 static const CGFloat LITTLE_SPACE = 5;
 CGFloat animatedDistance;
 NSArray *activityLabels;

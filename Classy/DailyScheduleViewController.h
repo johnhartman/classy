@@ -70,6 +70,13 @@
 @property IBOutlet UILabel* activity9Dash;
 @property IBOutlet UILabel* activity10Dash;
 
+// DAYS OF WEEK BUTTONS
+@property IBOutlet UIButton* MButton;
+@property IBOutlet UIButton* TButton;
+@property IBOutlet UIButton* WButton;
+@property IBOutlet UIButton* ThButton;
+@property IBOutlet UIButton* FButton;
+
 - (void)updateWeekday:(NSString*)weekday;
 
 @end
