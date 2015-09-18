@@ -93,7 +93,7 @@ static NSMutableSet* weeklySchedule;
     
     // C BLOCK TIMESLOTS -----------------------------
     
-    TimeSlot* CBlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:10*60+20] withDuration:[NSNumber numberWithInt:45]];
+    TimeSlot* CBlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:10*60+25] withDuration:[NSNumber numberWithInt:45]];
     
     TimeSlot* CBlockTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:9*60+15] withDuration:[NSNumber numberWithInt:45]];
     
@@ -103,7 +103,7 @@ static NSMutableSet* weeklySchedule;
     
     // D BLOCK TIMESLOTS -----------------------------
     
-    TimeSlot* DBlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:11*60+10] withDuration:[NSNumber numberWithInt:45]];
+    TimeSlot* DBlockMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:11*60+15] withDuration:[NSNumber numberWithInt:45]];
     
     TimeSlot* DBlockTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:10*60+20] withDuration:[NSNumber numberWithInt:45]];
     
@@ -143,7 +143,7 @@ static NSMutableSet* weeklySchedule;
     
     // MORNING MEETING TIMESLOTS -----------------------------
     
-    TimeSlot* MorningMeetingMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:10*60+5] withDuration:[NSNumber numberWithInt:10]];
+    TimeSlot* MorningMeetingMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:10*60+5] withDuration:[NSNumber numberWithInt:15]];
     
     TimeSlot* MorningMeetingThursday = [[TimeSlot alloc] initWithWeekday:@"Thursday" withStartMinute:[NSNumber numberWithInt:10*60+0] withDuration:[NSNumber numberWithInt:20]];
     
@@ -157,7 +157,7 @@ static NSMutableSet* weeklySchedule;
     
     // LUNCH TIMESLOTS -----------------------------
     
-    TimeSlot* LunchMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:11*60+55] withDuration:[NSNumber numberWithInt:55]];
+    TimeSlot* LunchMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:11*60+55] withDuration:[NSNumber numberWithInt:50]];
     
     TimeSlot* LunchTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:11*60+55] withDuration:[NSNumber numberWithInt:35]];
     
