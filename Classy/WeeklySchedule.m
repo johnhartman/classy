@@ -157,7 +157,7 @@ static NSMutableSet* weeklySchedule;
     
     // LUNCH TIMESLOTS -----------------------------
     
-    TimeSlot* LunchMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:11*60+55] withDuration:[NSNumber numberWithInt:50]];
+    TimeSlot* LunchMonday = [[TimeSlot alloc] initWithWeekday:@"Monday" withStartMinute:[NSNumber numberWithInt:12*60] withDuration:[NSNumber numberWithInt:50]];
     
     TimeSlot* LunchTuesday = [[TimeSlot alloc] initWithWeekday:@"Tuesday" withStartMinute:[NSNumber numberWithInt:11*60+55] withDuration:[NSNumber numberWithInt:35]];
     
