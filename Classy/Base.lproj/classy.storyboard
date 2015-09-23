@@ -116,6 +116,7 @@
                         <outlet property="currentActivityLabel" destination="BgS-du-i0y" id="AlN-om-RZC"/>
                         <outlet property="nextActivityLabel" destination="ASE-1B-eKw" id="dnP-Ci-mnU"/>
                         <outlet property="nextActivityStartTimeLabel" destination="xqP-zY-dkd" id="qIL-KZ-Jqw"/>
+                        <outlet property="progressView" destination="lPY-sK-2S0" id="Vcj-uf-Mfk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

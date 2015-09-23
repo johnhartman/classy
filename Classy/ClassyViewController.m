@@ -26,11 +26,6 @@
     [super viewDidLoad];
 	
     [self setTimer];
-    
-    self.progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleDefault];
-    
-    self.progressView.center = self.view.center;
-    [self.view addSubview:self.progressView];
 }
 
 // COUNTDOWN CODE
