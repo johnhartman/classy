@@ -1,3 +1,4 @@
+//  Copyright (c) 2014-2018 Natalie Hartman. All rights reserved.
 #import <UIKit/UIKit.h>
 
 @interface RootViewController : UIViewController <UIScrollViewDelegate>
